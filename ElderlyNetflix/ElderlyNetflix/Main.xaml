@@ -10,19 +10,33 @@
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
 
-        <Image Margin="806,16,805,10" Source="logo.png" Stretch="Fill"/>
-        <Button HorizontalAlignment="Left" Height="901" Grid.Row="2" VerticalAlignment="Top" Width="480" Grid.RowSpan="2">
+        <Image x:Name="Logo" Margin="806,16,805,0" Source="logo.png" ClipToBounds="True" SnapsToDevicePixels="True" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button HorizontalAlignment="Left" Height="881" Grid.Row="2" VerticalAlignment="Top" Width="480" BorderThickness="1,0">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
-            <Label Content="Label" Height="70" Width="270" FontSize="48"/>
+            <Label Content="Recents" Height="80" Width="200" FontFamily="Segoe UI Black" FontSize="48" Margin="0,625,0,0"/>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Height="901" VerticalAlignment="Top" Width="480" Margin="480,0,0,0" Grid.Row="2" Grid.RowSpan="2" Background="{x:Null}"/>
-        <Button Content="" HorizontalAlignment="Left" Height="901" VerticalAlignment="Top" Width="480" Margin="960,0,0,0" Grid.Row="2" Grid.RowSpan="2" Background="{x:Null}"/>
-        <Button Content="" HorizontalAlignment="Left" Height="901" Grid.Row="2" VerticalAlignment="Top" Width="480" Margin="1440,0,0,0" Grid.RowSpan="2">
+        <Button HorizontalAlignment="Left" Height="881" VerticalAlignment="Top" Width="480" Margin="480,0,0,0" Grid.Row="2" Background="{x:Null}" BorderThickness="1,0">
+            <Label x:Name="LabelSaved" Content="Saved" Height="80" Width="200" FontFamily="Segoe UI Black" FontSize="48" Margin="0,625,0,0"/>
+        </Button>
+        <Button HorizontalAlignment="Left" Height="885" VerticalAlignment="Top" Width="480" Margin="960,0,0,0" Grid.Row="2" Background="{x:Null}" BorderThickness="1,0">
+            <Label x:Name="LabelGenres" Content="Genres" Height="80" Width="200" FontFamily="Segoe UI Black" FontSize="48" Margin="0,625,0,0"/>
+        </Button>
+        <Button x:Name="Search" HorizontalAlignment="Center" Height="881" Grid.Row="2" VerticalAlignment="Top" Width="480" Margin="1440,0,0,0" FontFamily="Segoe UI Black" FontSize="48" BorderThickness="1,0,0,0">
             <Button.Background>
-                <ImageBrush/>
+                <ImageBrush ImageSource="PngMedium-Magnifying-Glass-Outline-Icon-2869.png">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="0.5" ScaleX="0.5"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform X="0.25" Y="0.25"/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
             </Button.Background>
+            <Label x:Name="LabelSearch" Content="Search" Height="80" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,625,0,0"/>
         </Button>
     </Grid>
 
