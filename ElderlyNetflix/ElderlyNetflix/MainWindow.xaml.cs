@@ -24,5 +24,11 @@ namespace ElderlyNetflix
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Main m = new Main();
+            m.Show();
+        }
     }
 }
