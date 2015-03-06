@@ -101,10 +101,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo.png" />
+    <Resource Include="Assets\Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PngMedium-Magnifying-Glass-Outline-Icon-2869.png" />
+    <Resource Include="Assets\Images\MagnifyingGlass.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
