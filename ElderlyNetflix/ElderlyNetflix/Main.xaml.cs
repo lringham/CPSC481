@@ -23,10 +23,5 @@ namespace ElderlyNetflix
         {
             InitializeComponent();
         }
-
-        private void Search_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
