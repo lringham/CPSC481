@@ -10,26 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ElderlyNetflix.Code;
-using ElderlyNetflix.Pages;
 
-namespace ElderlyNetflix
+namespace ElderlyNetflix.Pages
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for SavedPage.xaml
     /// </summary>
-    public partial class Main : Window, INavigable
+    public partial class SavedPage : UserControl
     {
-        public Main()
+        public SavedPage()
         {
             InitializeComponent();
-            Navigator.setWindow(this);       
-        }
-
-        public void useState(object state)
-        {
-
         }
     }
 }

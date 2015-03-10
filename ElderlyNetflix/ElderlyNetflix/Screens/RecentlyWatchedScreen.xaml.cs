@@ -10,26 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ElderlyNetflix.Code;
-using ElderlyNetflix.Pages;
 
-namespace ElderlyNetflix
+namespace ElderlyNetflix.Pages
 {
     /// <summary>
-    /// Interaction logic for Main.xaml
+    /// Interaction logic for MainPage.xaml
     /// </summary>
-    public partial class Main : Window, INavigable
+    public partial class MainScreen : UserControl
     {
-        public Main()
+        public MainScreen()
         {
             InitializeComponent();
-            Navigator.setWindow(this);       
-        }
-
-        public void useState(object state)
-        {
-
         }
     }
 }
