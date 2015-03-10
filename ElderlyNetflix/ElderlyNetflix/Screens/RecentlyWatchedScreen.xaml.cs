@@ -31,7 +31,7 @@ namespace ElderlyNetflix.Screens
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.navigate(new MainScreen());
+            Navigator.navigateBack();
         }
 
         private void addedResult(String name)
