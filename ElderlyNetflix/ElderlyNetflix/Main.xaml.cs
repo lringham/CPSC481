@@ -12,24 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ElderlyNetflix.Code;
-using ElderlyNetflix.Pages;
+using ElderlyNetflix.Screens;
 
 namespace ElderlyNetflix
 {
     /// <summary>
     /// Interaction logic for Main.xaml
     /// </summary>
-    public partial class Main : Window, INavigable
+    public partial class Main : Window
     {
         public Main()
         {
             InitializeComponent();
-            Navigator.setWindow(this);       
-        }
-
-        public void useState(object state)
-        {
-
+            Navigator.setWindow(this);
+            Navigator.navigate(new MainScreen()); //Navigate to the starting screen
         }
     }
 }

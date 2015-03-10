@@ -17,18 +17,13 @@ using ElderlyNetflix.Code;
 namespace ElderlyNetflix.Screens
 {
     /// <summary>
-    /// Interaction logic for RecentlyWatchedScreen.xaml
+    /// Interaction logic for MainScreen.xaml
     /// </summary>
-    public partial class RecentlyWatchedScreen : UserControl
+    public partial class MainScreen : UserControl
     {
-        public RecentlyWatchedScreen()
+        public MainScreen()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Navigator.navigate(new SavedScreen());
         }
     }
 }

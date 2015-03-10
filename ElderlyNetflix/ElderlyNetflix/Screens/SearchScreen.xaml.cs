@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ElderlyNetflix.Code;
 
-namespace ElderlyNetflix.Pages
+namespace ElderlyNetflix.Screens
 {
     /// <summary>
     /// Interaction logic for SearchScreen.xaml
@@ -23,6 +24,11 @@ namespace ElderlyNetflix.Pages
         public SearchScreen()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.navigate(new RecentlyWatchedScreen());
         }
     }
 }

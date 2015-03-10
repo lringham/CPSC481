@@ -12,17 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ElderlyNetflix.Code;
 
-namespace ElderlyNetflix.Pages
+namespace ElderlyNetflix.Screens
 {
     /// <summary>
-    /// Interaction logic for SavedPage.xaml
+    /// Interaction logic for SavedScreen.xaml
     /// </summary>
-    public partial class SavedPage : UserControl
+    public partial class SavedScreen : UserControl
     {
-        public SavedPage()
+        public SavedScreen()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.navigate(new SearchScreen());
         }
     }
 }
