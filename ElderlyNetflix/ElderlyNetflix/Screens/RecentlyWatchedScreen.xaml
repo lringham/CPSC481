@@ -5,9 +5,34 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="White">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="587,400,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="561,258,0,0" TextWrapping="Wrap" Text="Recently Watched" VerticalAlignment="Top" Width="120"/>
-
+    <Grid HorizontalAlignment="Center" Height="720" Margin="0,0,0,0" VerticalAlignment="Top" Width="1280">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF464646" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid Margin="0,0,0,620" VerticalAlignment="Top" Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="631*"/>
+                <ColumnDefinition Width="633*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock TextWrapping="Wrap" Text="Recently Watched" FontSize="36" Margin="486,0,488,2" Width="290" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="48"/>
+        </Grid>
+        <StackPanel x:Name="ResultsStackPanel" Margin="0,50,0,100" VerticalAlignment="Top"/>
+        <Grid Height="100" Margin="0" VerticalAlignment="Bottom">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7A0000"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="108*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Back" Margin="10" Click="Button_Click"/>
+        </Grid>
     </Grid>
 </UserControl>

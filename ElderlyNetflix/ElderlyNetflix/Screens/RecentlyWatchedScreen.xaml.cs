@@ -24,11 +24,21 @@ namespace ElderlyNetflix.Screens
         public RecentlyWatchedScreen()
         {
             InitializeComponent();
+
+            for(int i=0; i < 10; i++)
+                addedResult("test"+i);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.navigate(new SavedScreen());
+            Navigator.navigate(new MainScreen());
+        }
+
+        private void addedResult(String name)
+        {
+            Button b = new Button();
+            b.Content = name;
+            ResultsStackPanel.Children.Add(b);
         }
     }
 }
