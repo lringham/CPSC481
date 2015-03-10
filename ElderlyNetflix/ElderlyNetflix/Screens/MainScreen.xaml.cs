@@ -25,5 +25,25 @@ namespace ElderlyNetflix.Screens
         {
             InitializeComponent();
         }
+
+        private void Recent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Saved_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Recommend_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
