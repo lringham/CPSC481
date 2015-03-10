@@ -17,5 +17,7 @@
             <ColumnDefinition Width="320" />
             <ColumnDefinition Width="320" />
         </Grid.ColumnDefinitions>
+        <Image Grid.Column="1" Height="70" Margin="0" Width="177" Source="/ElderlyNetflix;component/Assets/Images/logo.png" Grid.ColumnSpan="2"/>
+
     </Grid>
 </UserControl>
