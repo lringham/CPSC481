@@ -67,6 +67,10 @@
     <Compile Include="Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
+    <Page Include="Screens\BrowseScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Screens\MainScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\INavigable.cs" />
+    <Compile Include="Screens\BrowseScreen.xaml.cs">
+      <DependentUpon>BrowseScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
     </Compile>
@@ -147,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\recent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

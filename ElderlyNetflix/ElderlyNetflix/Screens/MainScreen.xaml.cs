@@ -21,29 +21,38 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class MainScreen : UserControl
     {
+        private static SearchScreen search;
+        private static BrowseScreen browse;
+        private static SavedScreen saved;
+        private static RecentlyWatchedScreen recent;
+
         public MainScreen()
         {
-            InitializeComponent();
+            InitializeComponent();       
         }
 
         private void Recent_Click(object sender, RoutedEventArgs e)
         {
-
+            recent = new RecentlyWatchedScreen();
+            Navigator.navigate(recent);
         }
 
         private void Saved_Click(object sender, RoutedEventArgs e)
         {
-
+            saved = new SavedScreen();
+            Navigator.navigate(saved);
         }
 
-        private void Recommend_Click(object sender, RoutedEventArgs e)
+        private void Browse_Click(object sender, RoutedEventArgs e)
         {
-
+            browse = new BrowseScreen();
+            Navigator.navigate(browse);
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-
+            search = new SearchScreen();
+            Navigator.navigate(search);
         }
     }
 }
