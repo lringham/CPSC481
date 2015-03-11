@@ -24,7 +24,7 @@
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FF7A0000"/>
-                    <GradientStop Color="Red" Offset="1"/>
+                    <GradientStop Color="Black" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.ColumnDefinitions>
@@ -32,6 +32,11 @@
                 <ColumnDefinition Width="108*"/>
                 <ColumnDefinition Width="25*"/>
             </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Height="70" Margin="0" Width="177" Click="Home_Click" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button.Background>
+                    <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/logo.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
             <Button Content="Back" Margin="10" Click="Button_Click"/>
         </Grid>
     </Grid>

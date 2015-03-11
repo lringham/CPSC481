@@ -40,5 +40,10 @@ namespace ElderlyNetflix.Screens
             b.Content = name;
             ResultsStackPanel.Children.Add(b);
         }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.navigateAndClearStack(new MainScreen());
+        }
     }
 }

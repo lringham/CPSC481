@@ -15,13 +15,21 @@ namespace ElderlyNetflix.Code
         private static Stack<UserControl> screenStack;
         private static UserControl currentScreen; 
 
-        public static void setWindow(Main tmpWindow)
+        /// <summary>
+        /// Initialize the Navigator class with a pointer to the main window
+        /// </summary>
+        /// <param name="tmpWindow"></param>
+        public static void setWindow(Main mainWindow)
         {
-            window = tmpWindow;
+            window = mainWindow;
             initialized = true;
             screenStack = new Stack<UserControl>();
         }
 
+        /// <summary>
+        /// Navigate to a new screen, the previous screen is saved on the screen stack
+        /// </summary>
+        /// <param name="screen"></param>
     	public static void navigate(UserControl screen)
     	{
             //check if the window has been set
@@ -35,19 +43,13 @@ namespace ElderlyNetflix.Code
             setCurrentScreen(screen);
     	}
 
-        public static void navigateAndReplace(UserControl screen)
-        {
-            //Check if the window has been set
-            checkWindowSet();
-
-            //Remove current screen
-            if (screenStack.Count > 0)
-                screenStack.Pop();
-
-            //Set the new screen
-            setCurrentScreen(screen);
-        }
-
+        /// <summary>
+        /// Navigate to a new screen that implements INavigable.
+        /// The new screen is initialized with the given state.
+        /// The previous screen is saved on the screen stack
+        /// </summary>
+        /// <param name="screen"></param>
+        /// <param name="state"></param>
         public static void navigate(UserControl screen, object state)
         {
             //Check if the window has been set
@@ -63,6 +65,39 @@ namespace ElderlyNetflix.Code
             navScreen.useState(state);
         }
 
+        /// <summary>
+        /// Navigate to a new screen and replace the current screen without 
+        /// saving it to the screen stack.
+        /// </summary>
+        /// <param name="screen"></param>
+        public static void navigateAndReplace(UserControl screen)
+        {
+            //Check if the window has been set
+            checkWindowSet();
+
+            //Set the new screen
+            setCurrentScreen(screen);
+        }
+
+        /// <summary>
+        /// Navigate to a new screen and empty the entire screen stack.
+        /// </summary>
+        /// <param name="screen"></param>
+        public static void navigateAndClearStack(UserControl screen)
+        {
+            //Check if the window has been set
+            checkWindowSet();
+
+            //Remove all saved screens
+            screenStack.Clear();
+                
+            //Set the new screen
+            setCurrentScreen(screen);
+        }
+
+        /// <summary>
+        /// Navigate to the last seen screen on the screen stack.
+        /// </summary>
         public static void navigateBack()
         {
             //Check if the window has been set
@@ -76,12 +111,19 @@ namespace ElderlyNetflix.Code
             }
         }
 
+        /// <summary>
+        /// Check if the window has been registered with the Navigator class.
+        /// </summary>
         private static void checkWindowSet()
         {
             if (!initialized)
                 throw new Exception("Window not set in Navigator class");
         }
 
+        /// <summary>
+        /// Update the currentScreen field and the window content
+        /// </summary>
+        /// <param name="screen"></param>
         private static void setCurrentScreen(UserControl screen)
         {
             currentScreen = screen;
