@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ElderlyNetflix.Code;
 
 namespace ElderlyNetflix.Screens
 {
@@ -33,7 +34,7 @@ namespace ElderlyNetflix.Screens
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Handle back navigation
+            Navigator.navigateBack();
         }
     }
 }
