@@ -30,5 +30,10 @@ namespace ElderlyNetflix.Screens
         {
             Navigator.navigateBack();
         }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

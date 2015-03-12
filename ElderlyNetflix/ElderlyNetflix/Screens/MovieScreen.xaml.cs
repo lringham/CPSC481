@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElderlyNetflix.Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace ElderlyNetflix.Screens
         public MovieScreen()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.navigate(new PlayScreen());
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
