@@ -25,22 +25,27 @@ namespace ElderlyNetflix.Screens
         private Dictionary<int, Video> filteredVideos = new Dictionary<int, Video>();
         private Dictionary<Button, Video> buttonVideoMap = new Dictionary<Button, Video>();
 
-        private int WIDTH = 1280;
-        private int col1Perc = 80;
-        private int col2Perc = 20;
-        private int margin = 10;
-        private int rowHeight = 55;
-        private int fontSize = 18;
+        private static int WIDTH = 1280;
+        private static int MARGIN = 10;
+        private static int RHEIGHT = 55;
+        private static int FONTSIZE = 18;
 
+        /// <summary>
+        /// Initializes a new Browse screen.
+        /// </summary>
         public BrowseScreen()
         {
             InitializeComponent();
 
             addCategory("Category 1");
             addCategory("Category 2");
-
+            addCategory("SubCategory 2");
         }
 
+        /// <summary>
+        /// Adds a category with associated videos. Takes in a String associated to the category.
+        /// </summary>
+        /// <param name="title">String</param>
         private void addCategory(String title)
         {
             Grid g = new Grid();
@@ -50,8 +55,8 @@ namespace ElderlyNetflix.Screens
             g.ShowGridLines = false;
 
             TextBlock category = new TextBlock();
-            category.Margin = new Thickness(margin);
-            category.Height = rowHeight;
+            category.Margin = new Thickness(MARGIN);
+            category.Height = RHEIGHT;
             category.Text = title;
             category.FontSize = 24;
             category.FontWeight = FontWeights.Bold;
@@ -60,22 +65,26 @@ namespace ElderlyNetflix.Screens
 
             ScrollViewer sv = new ScrollViewer();
             sv.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
-            sv.Margin = new Thickness(margin);
+            sv.Margin = new Thickness(MARGIN);
             sv.Width = Panel.Width;
             Panel.Children.Add(sv);
 
-            StackPanel elem = new StackPanel();
-            
+            StackPanel elem = new StackPanel();            
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 10; i++)
                 if (i % 2 == 0)
-                    addResult(new Video("Movie " + i, "Horror", "Lee Ringham", "1961"), elem);
+                    addResult(new Video("Movie " + i, "Horror", "Cory Hutchison", "1961"), elem);
                 else
-                    addResult(new Video("Movie " + 5, "Comedy", "Lee Ringham"), elem);
+                    addResult(new Video("Movie " + 5, "Comedy", "Cory Hutchison"), elem);
 
             sv.Content = elem;
         }
 
+        /// <summary>
+        /// Adds a Video to the specified StackPanel.
+        /// </summary>
+        /// <param name="video">Video</param>
+        /// <param name="s">StackPanel</param>
         private void addResult(Video video, StackPanel s)
         {
             // Create the grid
@@ -110,10 +119,10 @@ namespace ElderlyNetflix.Screens
 
             // Movie Info
             TextBlock videoInfo = new TextBlock();
-            videoInfo.Margin = new Thickness(margin);
-            videoInfo.Height = rowHeight;
+            videoInfo.Margin = new Thickness(MARGIN);
+            videoInfo.Height = RHEIGHT;
             videoInfo.Text = video.toStringPretty();
-            videoInfo.FontSize = fontSize;
+            videoInfo.FontSize = FONTSIZE;
             videoInfo.FontWeight = FontWeights.Bold;
             videoInfo.Foreground = new SolidColorBrush(Colors.Black);
             videoInfo.VerticalAlignment = VerticalAlignment.Top;
