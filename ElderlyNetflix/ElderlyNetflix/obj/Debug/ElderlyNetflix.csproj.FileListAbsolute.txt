@@ -1,0 +1,62 @@
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\bin\Debug\ElderlyNetflix.exe.config
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\bin\Debug\ElderlyNetflix.exe
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\bin\Debug\ElderlyNetflix.pdb
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.csprojResolveAssemblyReference.cache
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Main.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\BrowseScreen.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\MainScreen.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\RecentlyWatchedScreen.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\FavoritesScreen.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\SearchResultsScreen.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\SearchScreen.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Main.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\BrowseScreen.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\MainScreen.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\RecentlyWatchedScreen.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\FavoritesScreen.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\SearchResultsScreen.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\SearchScreen.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\App.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix_MarkupCompile.cache
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.g.resources
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.Properties.Resources.resources
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.csproj.GenerateResource.Cache
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.exe
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.pdb
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\MovieScreen.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\PlayScreen.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\MovieScreen.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\PlayScreen.g.cs
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\LoginScreen.baml
+F:\Workspace\School\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\LoginScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\bin\Debug\ElderlyNetflix.exe.config
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.exe
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.pdb
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\bin\Debug\ElderlyNetflix.exe
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\bin\Debug\ElderlyNetflix.pdb
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.csprojResolveAssemblyReference.cache
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Main.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\BrowseScreen.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\LoginScreen.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\MainScreen.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\MovieScreen.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\PlayScreen.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\RecentlyWatchedScreen.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\FavoritesScreen.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\SearchResultsScreen.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\SearchScreen.baml
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Main.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\BrowseScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\LoginScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\MainScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\MovieScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\PlayScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\RecentlyWatchedScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\FavoritesScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\SearchResultsScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\Screens\SearchScreen.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\App.g.cs
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix_MarkupCompile.cache
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.g.resources
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.Properties.Resources.resources
+F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.csproj.GenerateResource.Cache

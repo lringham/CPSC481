@@ -10,30 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ElderlyNetflix.Code;
+using ElderlyNetflix.Screens;
 
-namespace ElderlyNetflix.Screens
+namespace ElderlyNetflix
 {
     /// <summary>
-    /// Interaction logic for LoginScreen.xaml
+    /// Interaction logic for Main.xaml
     /// </summary>
-    public partial class LoginScreen : UserControl
+    public partial class Main : Window
     {
-        public LoginScreen()
+        public Main()
         {
             InitializeComponent();
-        }
-
-        private void Home_Click(object sender, RoutedEventArgs e)
-        {
-            Navigator.navigate(new MainScreen());
-        }
-
-        private void Login_Click(object sender, RoutedEventArgs e)
-        {
-            Navigator.navigate(new MainScreen());
+            Navigator.setWindow(this);
+            Navigator.navigate(new LoginScreen()); //Navigate to the starting screen
         }
     }
 }
