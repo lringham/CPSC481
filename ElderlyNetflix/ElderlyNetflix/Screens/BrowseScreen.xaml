@@ -21,13 +21,6 @@
                 <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/logo.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <ListView Grid.Column="1" HorizontalAlignment="Left" Height="598" Margin="0" Grid.Row="1" VerticalAlignment="Top" Width="960" BorderThickness="0" Background="White" Padding="35">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
         <Button x:Name="Back" Content="" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="160" Height="90" BorderThickness="0" Click="Back_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/back.png" Stretch="Uniform">
@@ -42,6 +35,9 @@
                 </ImageBrush>
             </Button.Background>
         </Button>
+        <TextBlock x:Name="headerString" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1280" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Text="Category 1" FontSize="24" Padding="10,3,0,0"/>
+
+        <TextBlock />
 
 
     </Grid>
