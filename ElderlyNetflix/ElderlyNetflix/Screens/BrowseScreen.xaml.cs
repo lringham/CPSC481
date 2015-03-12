@@ -26,8 +26,6 @@ namespace ElderlyNetflix.Screens
         private Dictionary<Button, Video> buttonVideoMap = new Dictionary<Button, Video>();
 
         private int WIDTH = 1280;
-        private int col1Perc = 80;
-        private int col2Perc = 20;
         private int margin = 10;
         private int rowHeight = 55;
         private int fontSize = 18;

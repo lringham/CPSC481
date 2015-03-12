@@ -7,7 +7,7 @@
              d:DesignHeight="720" d:DesignWidth="1280">
 
     <Grid Margin="0,-43,0,43">
-        <Image Margin="10,0,0,10" Source="/ElderlyNetflix;component/imagesLKEPHTJG.jpg" Opacity="0.5" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+        <Image Margin="10,0,0,10" Source="/ElderlyNetflix;component/Assets/Images/imagesLKEPHTJG.jpg" Opacity="0.5" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -49,7 +49,7 @@
                 </Button.Background>
             </Button>
         </Grid>
-        <Image Margin="20,10,1035,550" Source="/ElderlyNetflix;component/imagesDCX1E6O5.jpg" Stretch="Fill"/>
+        <Image Margin="20,10,1035,550" Source="/ElderlyNetflix;component/Assets/Images/imagesDCX1E6O5.jpg" Stretch="Fill"/>
 
 
 

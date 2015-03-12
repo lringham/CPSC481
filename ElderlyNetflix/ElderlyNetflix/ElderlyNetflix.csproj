@@ -72,21 +72,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Screens\LoginPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Screens\LoginScreen.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Screens\MainScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Screens\MovieScreen.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Screens\PlayScreen.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Screens\RecentlyWatchedScreen.xaml">
       <SubType>Designer</SubType>
@@ -110,8 +110,17 @@
     <Compile Include="Screens\BrowseScreen.xaml.cs">
       <DependentUpon>BrowseScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\LoginScreen.xaml.cs">
+      <DependentUpon>LoginScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MovieScreen.xaml.cs">
+      <DependentUpon>MovieScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\PlayScreen.xaml.cs">
+      <DependentUpon>PlayScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Screens\RecentlyWatchedScreen.xaml.cs">
       <DependentUpon>RecentlyWatchedScreen.xaml</DependentUpon>
