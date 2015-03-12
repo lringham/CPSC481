@@ -6,8 +6,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="White">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF464646" Offset="1"/>
+                <GradientStop Color="White"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="90" />
+            <RowDefinition Height="90" >
+            </RowDefinition>
             <RowDefinition Height="545*" />
             <RowDefinition Height="32"/>
         </Grid.RowDefinitions>
