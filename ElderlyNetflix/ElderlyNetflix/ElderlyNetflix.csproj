@@ -72,9 +72,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Screens\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Screens\MainScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\MovieScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\PlayScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Screens\RecentlyWatchedScreen.xaml">
       <SubType>Designer</SubType>
@@ -165,6 +177,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\imagesDCX1E6O5.jpg" />
+    <Resource Include="Assets\Images\imagesLKEPHTJG.jpg" />
+    <Resource Include="Assets\Images\imagesQVQDDBR3.jpg" />
+    <Resource Include="Assets\Images\imagesT9FUD0D5.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
