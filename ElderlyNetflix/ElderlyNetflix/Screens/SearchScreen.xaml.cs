@@ -35,5 +35,22 @@ namespace ElderlyNetflix.Screens
         {
             Navigator.navigateBack();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Do search
+        }
+
+        private void SearchBar_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (SearchBar.Text == "Search for Name, Director, Year or Actor")
+                SearchBar.Text = "";
+        }
+
+        private void SearchBar_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (SearchBar.Text == "")
+                SearchBar.Text = "Search for Name, Director, Year or Actor";
+        }
     }
 }
