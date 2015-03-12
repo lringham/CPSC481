@@ -90,7 +90,7 @@ namespace ElderlyNetflix.Screens
             ColumnDefinition gridCol3 = new ColumnDefinition();
             gridCol1.Width = new GridLength(30);
             gridCol2.Width = new GridLength(80, GridUnitType.Star);
-            gridCol3.Width = new GridLength(15, GridUnitType.Star);
+            gridCol3.Width = new GridLength(20, GridUnitType.Star);
             grid.ColumnDefinitions.Add(gridCol1);
             grid.ColumnDefinitions.Add(gridCol2);
             grid.ColumnDefinitions.Add(gridCol3);
@@ -103,6 +103,8 @@ namespace ElderlyNetflix.Screens
             bi.EndInit();
             art.Stretch = Stretch.Uniform;
             art.Source = bi;
+            art.Height = 45;
+            art.Width = art.Height/2;
             Grid.SetColumn(art, 0);
             grid.Children.Add(art);
 
@@ -123,7 +125,7 @@ namespace ElderlyNetflix.Screens
             Button infoButton = new Button();
             infoButton.Content = "More Info";
             infoButton.Background = Brushes.Gray;
-            infoButton.Width = 80;
+            //infoButton.Width = 80;
             //infoButton.Style.Triggers.Is
             infoButton.Click += new RoutedEventHandler(Info_Click);
             Grid.SetRow(infoButton, 0);
