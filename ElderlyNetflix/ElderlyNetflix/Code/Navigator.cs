@@ -55,13 +55,15 @@ namespace ElderlyNetflix.Code
             //Check if the window has been set
             checkWindowSet();
 
+            //Check if the screen is actually navigable
+            INavigable navScreen = screen as INavigable;
+            if (navScreen == null)
+                throw new Exception("UserControl is not INavigable");
+
             //Set the new screen
             setCurrentScreen(screen);
 
             //Set the screens state
-            INavigable navScreen = screen as INavigable;
-            if (navScreen == null)
-                throw new Exception("UserControl is not INavigable");
             navScreen.useState(state);
         }
 

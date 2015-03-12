@@ -124,6 +124,7 @@ namespace ElderlyNetflix.Screens
             }
 
             videos.Clear();
+            buttonVideoMap.Clear();
             foreach (Video video in videosInOrder)
                 addResult(video);
         }
