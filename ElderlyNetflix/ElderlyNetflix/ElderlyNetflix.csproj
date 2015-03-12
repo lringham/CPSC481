@@ -71,7 +71,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Resource Include="Screens\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
     <Page Include="Screens\MainScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\MovieScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\PlayScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -93,8 +105,17 @@
     <Compile Include="Screens\BrowseScreen.xaml.cs">
       <DependentUpon>BrowseScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MovieScreen.xaml.cs">
+      <DependentUpon>MovieScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\PlayScreen.xaml.cs">
+      <DependentUpon>PlayScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Screens\RecentlyWatchedScreen.xaml.cs">
       <DependentUpon>RecentlyWatchedScreen.xaml</DependentUpon>
@@ -157,6 +178,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagesLKEPHTJG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagesQVQDDBR3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagesT9FUD0D5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imagesDCX1E6O5.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
