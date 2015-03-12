@@ -24,5 +24,15 @@ namespace ElderlyNetflix.Screens
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
