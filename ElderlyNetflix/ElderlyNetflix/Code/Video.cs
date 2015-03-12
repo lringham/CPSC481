@@ -13,8 +13,8 @@ namespace ElderlyNetflix.Code
         public string director;
         public string[] actors;
         public string year;
-        
-        public Video(string name, string genre = "", string director = "", string[] actors = null, string year = "")
+
+        public Video(string name, string genre = "", string director = "", string year = "", string[] actors = null)
         {
             this.name = name;
             this.genre = genre;
@@ -25,11 +25,17 @@ namespace ElderlyNetflix.Code
 
         public string toStringPretty()
         {
-            return name +
-                (genre      != "" ? "\n" + genre    : "") +
-                (director   != "" ? "\n" + director : "") +
-                (year       != "" ? "\n" + year     : "");
+            string info =  
+                (year           != "" ? " (" + year +")"    : "") + //print the year if it exsists                
+                (genre+director != "" ? "\n"                : "") + //print a newline if there is more movie info
+                (director       != "" ? director + ", "     : "") + 
+                (genre          != "" ? genre               : "");
 
+            char[] infoArray = info.ToCharArray();
+            if (infoArray.Length > 0 && infoArray[infoArray.Length - 1] == ',' && genre != ",")
+                return name + info.Substring(0, info.Length - 2);
+            else
+                return name + info;
         }
     }
 }

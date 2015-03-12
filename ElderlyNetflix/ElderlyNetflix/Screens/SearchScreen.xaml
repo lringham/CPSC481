@@ -44,6 +44,8 @@
                 </Button.Background>
             </Button>
         </Grid>
-        <StackPanel x:Name="ResultsStackPanel" Margin="0,0,0,100" VerticalAlignment="Top"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" CanContentScroll="True">
+            <StackPanel x:Name="ResultsStackPanel" Margin="0,0,0,100" VerticalAlignment="Top" Height="990"/>
+        </ScrollViewer>
     </StackPanel>
 </UserControl>

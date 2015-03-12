@@ -31,7 +31,7 @@ namespace ElderlyNetflix.Screens
 
             for (int i = 0; i < 20; i++)
                 if (i % 2 == 0)
-                    addResult(new Video("Movie " + i, "Horror"));
+                    addResult(new Video("Movie " + i, "Horror", "Lee Ringham", "1988"));
                 else
                     addResult(new Video("Movie " + 5, "Comedy"));
         }
