@@ -5,26 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="White">
-    <Grid HorizontalAlignment="Center" Height="720" Margin="0,0,0,0" VerticalAlignment="Top" Width="1280">
-        <Grid.Background>
+    <StackPanel HorizontalAlignment="Center" Height="720" Margin="0,0,0,0" VerticalAlignment="Top" Width="1280">
+        <StackPanel.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF464646" Offset="0"/>
-                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FF464646" Offset="1"/>
+                <GradientStop Color="White"/>
             </LinearGradientBrush>
-        </Grid.Background>
-        <Grid Margin="0,0,0,620" VerticalAlignment="Top" Height="50">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="631*"/>
-                <ColumnDefinition Width="633*"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock TextWrapping="Wrap" Text="Recently Watched" FontSize="36" Margin="486,0,488,2" Width="290" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="48"/>
-        </Grid>
-        <StackPanel x:Name="ResultsStackPanel" Margin="0,50,0,100" VerticalAlignment="Top"/>
-        <Grid Height="100" Margin="0" VerticalAlignment="Bottom">
+        </StackPanel.Background>
+        <Grid Height="90" Margin="0" VerticalAlignment="Top">
             <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7A0000"/>
-                    <GradientStop Color="Black" Offset="1"/>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4D4D4D"/>
+                    <GradientStop Color="#FFBBBBBB" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.ColumnDefinitions>
@@ -37,7 +29,26 @@
                     <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/logo.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
-            <Button Content="Back" Margin="10" Click="Button_Click"/>
+            <Button x:Name="Back" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="90" BorderThickness="0" Click="Back_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/back.png" Stretch="Uniform">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.5" ScaleY="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="FilterTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="855,32,0,0" TextWrapping="Wrap" Text="Filter Results" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" VerticalContentAlignment="Center" LostFocus="FilterTextBox_LostFocus" GotFocus="FilterTextBox_GotFocus"/>
+            <Button Content="Filter" Grid.Column="2" HorizontalAlignment="Left" Margin="100,32,0,0" VerticalAlignment="Top" Width="75" Height="22"/>
         </Grid>
-    </Grid>
+        <TextBlock Text= "Recently Watched Movies" FontSize="24" Padding="10,3,0,0"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" CanContentScroll="True">
+            <StackPanel x:Name="ResultsStackPanel" Margin="0,0,0,100" VerticalAlignment="Top" Height="990"/>
+        </ScrollViewer>
+    </StackPanel>
 </UserControl>

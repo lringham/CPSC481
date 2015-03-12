@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Page Include="Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -64,6 +67,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Code\Navigator.cs" />
+    <Compile Include="Code\Video.cs" />
     <Compile Include="Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
@@ -71,19 +75,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Resource Include="Screens\LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Resource>
     <Page Include="Screens\MainScreen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Screens\MovieScreen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Screens\PlayScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,8 +112,11 @@
     <Compile Include="Screens\RecentlyWatchedScreen.xaml.cs">
       <DependentUpon>RecentlyWatchedScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\SavedScreen.xaml.cs">
-      <DependentUpon>SavedScreen.xaml</DependentUpon>
+    <Compile Include="Screens\FavoritesScreen.xaml.cs">
+      <DependentUpon>FavoritesScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\SearchResultsScreen.xaml.cs">
+      <DependentUpon>SearchResultsScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Screens\SearchScreen.xaml.cs">
       <DependentUpon>SearchScreen.xaml</DependentUpon>

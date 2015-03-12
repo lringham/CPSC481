@@ -26,14 +26,31 @@ namespace ElderlyNetflix.Screens
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.navigateAndClearStack(new MainScreen());
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             Navigator.navigateBack();
         }
 
-        private void Home_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.navigateAndClearStack(new MainScreen());
+            Navigator.navigate(new SearchResultsScreen(), SearchBar.Text);
+        }
+
+        private void SearchBar_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (SearchBar.Text == "Search for Name, Director, Year or Actor")
+                SearchBar.Text = "";
+        }
+
+        private void SearchBar_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (SearchBar.Text == "")
+                SearchBar.Text = "Search for Name, Director, Year or Actor";
         }
     }
 }

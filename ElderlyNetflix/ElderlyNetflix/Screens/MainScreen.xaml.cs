@@ -23,7 +23,7 @@ namespace ElderlyNetflix.Screens
     {
         private static SearchScreen search;
         private static BrowseScreen browse;
-        private static SavedScreen saved;
+        private static FavoritesScreen saved;
         private static RecentlyWatchedScreen recent;
 
         public MainScreen()
@@ -39,7 +39,7 @@ namespace ElderlyNetflix.Screens
 
         private void Saved_Click(object sender, RoutedEventArgs e)
         {
-            saved = new SavedScreen();
+            saved = new FavoritesScreen();
             Navigator.navigate(saved);
         }
 
