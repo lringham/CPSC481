@@ -60,3 +60,6 @@ F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetf
 F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.g.resources
 F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.Properties.Resources.resources
 F:\Workspace\School\CPSC 481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.csproj.GenerateResource.Cache
+F:\Workspace\CPSC481\ElderlyNetflix\ElderlyNetflix\bin\Debug\ElderlyNetflix.exe.config
+F:\Workspace\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.exe
+F:\Workspace\CPSC481\ElderlyNetflix\ElderlyNetflix\obj\Debug\ElderlyNetflix.pdb
