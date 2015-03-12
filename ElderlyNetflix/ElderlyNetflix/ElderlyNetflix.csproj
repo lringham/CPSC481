@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -60,14 +62,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Code\Navigator.cs" />
+    <Compile Include="Code\Video.cs" />
     <Compile Include="Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
@@ -75,12 +75,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\INavigable.cs" />
+    <Compile Include="Screens\BrowseScreen.xaml.cs">
+      <DependentUpon>BrowseScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen.xaml.cs">
+      <DependentUpon>MainScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\RecentlyWatchedScreen.xaml.cs">
+      <DependentUpon>RecentlyWatchedScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FavoritesScreen.xaml.cs">
+      <DependentUpon>FavoritesScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\SearchResultsScreen.xaml.cs">
+      <DependentUpon>SearchResultsScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\SearchScreen.xaml.cs">
+      <DependentUpon>SearchScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -105,13 +120,34 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo.png" />
+    <Resource Include="Assets\Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="PngMedium-Magnifying-Glass-Outline-Icon-2869.png" />
+    <Resource Include="Assets\Images\MagnifyingGlass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Videos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\saved.png" />
+    <Resource Include="Assets\Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\recommend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\recent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

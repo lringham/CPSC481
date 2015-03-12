@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ElderlyNetflix.Code;
+using ElderlyNetflix.Screens;
 
 namespace ElderlyNetflix
 {
@@ -22,6 +24,8 @@ namespace ElderlyNetflix
         public Main()
         {
             InitializeComponent();
+            Navigator.setWindow(this);
+            Navigator.navigate(new MainScreen()); //Navigate to the starting screen
         }
     }
 }
