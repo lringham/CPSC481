@@ -37,17 +37,8 @@ namespace ElderlyNetflix.Screens
             InitializeComponent();
 
             addCategory("Category 1");
-            for (int i = 0; i < 5; i++)
-                if (i % 2 == 0)
-                    addResult(new Video("Movie " + i, "Horror", "Lee Ringham", "1961"));
-                else
-                    addResult(new Video("Movie " + 5, "Comedy", "Lee Ringham"));
-            addCategory("Sub-Category 1");
-            for (int i = 0; i < 5; i++)
-                if (i % 2 == 0)
-                    addResult(new Video("Movie " + i, "Horror", "Lee Ringham", "1961"));
-                else
-                    addResult(new Video("Movie " + 5, "Comedy", "Lee Ringham"));
+            addCategory("Category 2");
+
         }
 
         private void addCategory(String title)
@@ -63,12 +54,31 @@ namespace ElderlyNetflix.Screens
             category.Height = rowHeight;
             category.Text = title;
             category.FontSize = 24;
+            category.FontWeight = FontWeights.Bold;
             g.Children.Add(category);
-            ResultsStackPanel.Children.Add(g);
+            Panel.Children.Add(g);
+
+            ScrollViewer sv = new ScrollViewer();
+            sv.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
+            sv.Margin = new Thickness(margin);
+            sv.Width = Panel.Width;
+            Panel.Children.Add(sv);
+
+            StackPanel elem = new StackPanel();
+            
+
+            for (int i = 0; i < 2; i++)
+                if (i % 2 == 0)
+                    addResult(new Video("Movie " + i, "Horror", "Lee Ringham", "1961"), elem);
+                else
+                    addResult(new Video("Movie " + 5, "Comedy", "Lee Ringham"), elem);
+
+            sv.Content = elem;
         }
 
-        private void addResult(Video video)
+        private void addResult(Video video, StackPanel s)
         {
+            // Create the grid
             Grid grid = new Grid();
             grid.Width = WIDTH;
             grid.HorizontalAlignment = HorizontalAlignment.Left;
@@ -77,11 +87,26 @@ namespace ElderlyNetflix.Screens
 
             ColumnDefinition gridCol1 = new ColumnDefinition();
             ColumnDefinition gridCol2 = new ColumnDefinition();
-            gridCol1.Width = new GridLength(col1Perc, GridUnitType.Star);
-            gridCol2.Width = new GridLength(col2Perc, GridUnitType.Star);
+            ColumnDefinition gridCol3 = new ColumnDefinition();
+            gridCol1.Width = new GridLength(30);
+            gridCol2.Width = new GridLength(80, GridUnitType.Star);
+            gridCol3.Width = new GridLength(15, GridUnitType.Star);
             grid.ColumnDefinitions.Add(gridCol1);
             grid.ColumnDefinitions.Add(gridCol2);
+            grid.ColumnDefinitions.Add(gridCol3);
+            
+            // Image File
+            Image art = new Image();
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.UriSource = new Uri("/ElderlyNetflix;component/Assets/Images/icon.png", UriKind.Relative);
+            bi.EndInit();
+            art.Stretch = Stretch.Uniform;
+            art.Source = bi;
+            Grid.SetColumn(art, 0);
+            grid.Children.Add(art);
 
+            // Movie Info
             TextBlock videoInfo = new TextBlock();
             videoInfo.Margin = new Thickness(margin);
             videoInfo.Height = rowHeight;
@@ -91,73 +116,30 @@ namespace ElderlyNetflix.Screens
             videoInfo.Foreground = new SolidColorBrush(Colors.Black);
             videoInfo.VerticalAlignment = VerticalAlignment.Top;
             Grid.SetRow(videoInfo, 0);
-            Grid.SetColumn(videoInfo, 0);
+            Grid.SetColumn(videoInfo, 1);
             grid.Children.Add(videoInfo);
 
+            // Info button
             Button infoButton = new Button();
             infoButton.Content = "More Info";
-            //infoButton.Background = Background.Opacity
-            infoButton.Click += new RoutedEventHandler(videoClicked);
+            infoButton.Background = Brushes.Gray;
+            infoButton.Width = 80;
+            //infoButton.Style.Triggers.Is
+            infoButton.Click += new RoutedEventHandler(Info_Click);
             Grid.SetRow(infoButton, 0);
-            Grid.SetColumn(infoButton, 1);
+            Grid.SetColumn(infoButton, 2);
             grid.Children.Add(infoButton);
 
-            ResultsStackPanel.Children.Add(grid);
+            // Pack it all in
+            s.Children.Add(grid);
             videos.Add(video, grid);
             buttonVideoMap.Add(infoButton, video);
         }
 
-        public void filter(string filterText)
-        {
-            filteredVideos.Clear();
-
-            int i = 0;
-            filterText = filterText.ToUpper();
-
-            foreach (KeyValuePair<Video, Grid> videoPair in videos)
-            {
-                if (!videoPair.Key.name.ToUpper().Contains(filterText))
-                {
-                    filteredVideos.Add(i, videoPair.Key);
-                    ResultsStackPanel.Children.Remove(videoPair.Value);
-                }
-                i++;
-            }
-
-            foreach (KeyValuePair<int, Video> videoPair in filteredVideos)
-            {
-                videos.Remove(videoPair.Value);
-            }
-        }
-
-        public void clearStackPanel()
+        public void clearStackPanel(StackPanel s)
         {
             foreach (KeyValuePair<Video, Grid> videoPair in videos)
-                ResultsStackPanel.Children.Remove(videoPair.Value);
-        }
-
-        public void removeFilter()
-        {
-            clearStackPanel();
-            List<Video> videosInOrder = new List<Video>();
-
-            int totalVideoCount = videos.Count + filteredVideos.Count;
-            int j = 0;
-            for (int i = 0; i < totalVideoCount; ++i)
-            {
-                Video video;
-                if (filteredVideos.TryGetValue(i, out video))
-                    videosInOrder.Add(video);
-                else if (videos.Keys.Count > j)
-                    videosInOrder.Add(videos.Keys.ElementAt<Video>(j++));
-                else
-                    throw new Exception("Invalid video...?! This should never happen");
-            }
-
-            videos.Clear();
-            buttonVideoMap.Clear();
-            foreach (Video video in videosInOrder)
-                addResult(video);
+                s.Children.Remove(videoPair.Value);
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
@@ -170,24 +152,9 @@ namespace ElderlyNetflix.Screens
             Navigator.navigateBack();
         }
 
-        private void videoClicked(object sender, RoutedEventArgs e)
+        private void Info_Click(object sender, RoutedEventArgs e)
         {
-            Video video = buttonVideoMap[(Button)sender];
-            Navigator.navigate(new FavoritesScreen(), video);
+            // TODO: Handle going to Movie Info Page
         }
-
-        /*
-        private void FilterTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (FilterTextBox.Text == "")
-                FilterTextBox.Text = "Filter Results";
-        }
-
-        private void FilterTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (FilterTextBox.Text == "Filter Results")
-                FilterTextBox.Text = "";
-        }
-         */
     }
 }
