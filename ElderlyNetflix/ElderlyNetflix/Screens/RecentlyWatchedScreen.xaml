@@ -46,6 +46,7 @@
             <TextBox x:Name="FilterTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="855,32,0,0" TextWrapping="Wrap" Text="Filter Results" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" VerticalContentAlignment="Center" LostFocus="FilterTextBox_LostFocus" GotFocus="FilterTextBox_GotFocus"/>
             <Button Content="Filter" Grid.Column="2" HorizontalAlignment="Left" Margin="100,32,0,0" VerticalAlignment="Top" Width="75" Height="22"/>
         </Grid>
+        <TextBlock Text= "Recently Watched Movies" FontSize="24" Padding="10,3,0,0"/>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" CanContentScroll="True">
             <StackPanel x:Name="ResultsStackPanel" Margin="0,0,0,100" VerticalAlignment="Top" Height="990"/>
         </ScrollViewer>

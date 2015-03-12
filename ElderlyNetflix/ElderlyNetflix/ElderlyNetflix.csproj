@@ -84,6 +84,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Screens\SearchResultsScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Screens\SearchScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,6 +106,9 @@
     </Compile>
     <Compile Include="Screens\FavoritesScreen.xaml.cs">
       <DependentUpon>FavoritesScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\SearchResultsScreen.xaml.cs">
+      <DependentUpon>SearchResultsScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Screens\SearchScreen.xaml.cs">
       <DependentUpon>SearchScreen.xaml</DependentUpon>

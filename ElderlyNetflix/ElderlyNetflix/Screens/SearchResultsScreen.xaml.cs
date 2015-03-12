@@ -17,9 +17,9 @@ using ElderlyNetflix.Code;
 namespace ElderlyNetflix.Screens
 {
     /// <summary>
-    /// Interaction logic for RecentlyWatchedScreen.xaml
+    /// Interaction logic for SearchResultsScreen.xaml
     /// </summary>
-    public partial class RecentlyWatchedScreen : UserControl
+    public partial class SearchResultsScreen : UserControl, INavigable
     {
         Dictionary<Video, Grid> videos = new Dictionary<Video, Grid>();
         Dictionary<int, Video> filteredVideos = new Dictionary<int, Video>();
@@ -32,15 +32,9 @@ namespace ElderlyNetflix.Screens
         int rowHeight = 55;
         int fontSize = 18;
 
-        public RecentlyWatchedScreen()
+        public SearchResultsScreen()
         {
             InitializeComponent();
-
-            for (int i = 0; i < 20; i++)
-                if (i % 2 == 0)
-                    addResult(new Video("Movie " + i, "Horror", "Lee Ringham", "1961"));
-                else
-                    addResult(new Video("Movie " + 5, "Comedy", "Lee Ringham"));
         }
 
         private void addResult(Video video)
@@ -50,7 +44,6 @@ namespace ElderlyNetflix.Screens
             grid.HorizontalAlignment = HorizontalAlignment.Left;
             grid.VerticalAlignment = VerticalAlignment.Top;
             grid.ShowGridLines = false;
-            //grid.Background = new SolidColorBrush(Colors.CornflowerBlue);
 
             ColumnDefinition gridCol1 = new ColumnDefinition();
             ColumnDefinition gridCol2 = new ColumnDefinition();
@@ -163,5 +156,16 @@ namespace ElderlyNetflix.Screens
             if (FilterTextBox.Text == "Filter Results")
                 FilterTextBox.Text = "";
         }
+
+        public void useState(object state)
+        {
+            String query = (string)state;
+            headerString.Text = "Search results for \"" + query + "\"";
+
+            for (int i = 0; i < 7; i++)
+                    addResult(new Video("Search " + i));
+        }
     }
+
+
 }

@@ -60,6 +60,10 @@ namespace ElderlyNetflix.Code
             if (navScreen == null)
                 throw new Exception("UserControl is not INavigable");
 
+            //Save the previous screen
+            if (currentScreenSet)
+                screenStack.Push(currentScreen);
+
             //Set the new screen
             setCurrentScreen(screen);
 

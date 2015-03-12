@@ -38,7 +38,7 @@ namespace ElderlyNetflix.Screens
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //Do search
+            Navigator.navigate(new SearchResultsScreen(), SearchBar.Text);
         }
 
         private void SearchBar_GotFocus(object sender, RoutedEventArgs e)

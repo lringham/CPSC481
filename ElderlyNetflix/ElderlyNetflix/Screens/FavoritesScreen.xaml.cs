@@ -35,6 +35,8 @@ namespace ElderlyNetflix.Screens
         public FavoritesScreen()
         {
             InitializeComponent();
+            for (int i = 0; i < 3; i++)
+                    addResult(new Video("Favorite Movie " + i));
         }
 
         private void addResult(Video video)
@@ -43,8 +45,7 @@ namespace ElderlyNetflix.Screens
             grid.Width = gridWidth;
             grid.HorizontalAlignment = HorizontalAlignment.Left;
             grid.VerticalAlignment = VerticalAlignment.Top;
-            grid.ShowGridLines = false;
-            grid.Background = new SolidColorBrush(Colors.CornflowerBlue);
+            grid.ShowGridLines = false;        
 
             ColumnDefinition gridCol1 = new ColumnDefinition();
             ColumnDefinition gridCol2 = new ColumnDefinition();
