@@ -27,7 +27,7 @@ namespace ElderlyNetflix.Code
         {
             string info =  
                 (year           != "" ? " (" + year +")"    : "") + //print the year if it exsists                
-                (genre+director != "" ? "\n"                : "") + //print a newline if there is more movie info
+                (genre+director != "" ? " - "               : "") + //print a newline if there is more movie info
                 (director       != "" ? director + ", "     : "") + 
                 (genre          != "" ? genre               : "");
 

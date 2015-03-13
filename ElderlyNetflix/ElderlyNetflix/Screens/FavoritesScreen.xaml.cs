@@ -144,7 +144,7 @@ namespace ElderlyNetflix.Screens
         private void videoClicked(object sender, RoutedEventArgs e)
         {
             Video video = buttonVideoMap[(Button)sender];
-            Navigator.navigate(new FavoritesScreen(), video);
+            Navigator.navigate(new MovieScreen(), video);
         }
 
         private void FilterTextBox_LostFocus(object sender, RoutedEventArgs e)

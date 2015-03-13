@@ -57,7 +57,7 @@
                 <RowDefinition Height="29*"/>
                 <RowDefinition Height="347*"/>
             </Grid.RowDefinitions>
-            <Label Content="Search for a Video!" FontSize="24" HorizontalAlignment="Center" Margin="198,32,195,-80" Grid.RowSpan="3" Grid.Column="1" Width="212" Grid.Row="1"/>
+            <Label Content="Search for a Video!" FontSize="24" HorizontalAlignment="Center" Margin="198,63,195,-111" Grid.RowSpan="3" Grid.Column="1" Width="212" Grid.Row="1"/>
             <Button Content="Search" Width = "125" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Margin="0,158,0,107" Grid.ColumnSpan="2" Click="Button_Click"/>
             <TextBox x:Name="SearchBar" TextWrapping="Wrap" Text="Search for Name, Director, Year or Actor" Margin="4,158,1,107" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" GotFocus="SearchBar_GotFocus" LostFocus="SearchBar_LostFocus"/>
         </Grid>

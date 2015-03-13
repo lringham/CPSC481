@@ -19,7 +19,7 @@ namespace ElderlyNetflix.Screens
     /// <summary>
     /// Interaction logic for MovieScreen.xaml
     /// </summary>
-    public partial class MovieScreen : UserControl
+    public partial class MovieScreen : UserControl, INavigable
     {
         public MovieScreen()
         {
@@ -28,11 +28,22 @@ namespace ElderlyNetflix.Screens
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.navigate(new PlayScreen());
+            Navigator.navigate(new PlayScreen()); 
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
+            Navigator.navigateAndClearStack(new MainScreen());
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.navigateBack();
+        }
+
+        public void useState(object state)
+        {
+            Video video = (Video)state;
 
         }
     }

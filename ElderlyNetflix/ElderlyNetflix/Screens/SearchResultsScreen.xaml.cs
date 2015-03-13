@@ -120,7 +120,7 @@ namespace ElderlyNetflix.Screens
                 else if (videos.Keys.Count > j)
                     videosInOrder.Add(videos.Keys.ElementAt<Video>(j++));
                 else
-                    throw new Exception("Invald video...?! This should never happen");
+                    throw new Exception("Invalid video...?! This should never happen");
             }
 
             videos.Clear();
@@ -142,7 +142,7 @@ namespace ElderlyNetflix.Screens
         private void videoClicked(object sender, RoutedEventArgs e)
         {
             Video video = buttonVideoMap[(Button)sender];
-            Navigator.navigate(new FavoritesScreen(), video);
+            Navigator.navigate(new MovieScreen(), video);
         }
 
         private void FilterTextBox_LostFocus(object sender, RoutedEventArgs e)

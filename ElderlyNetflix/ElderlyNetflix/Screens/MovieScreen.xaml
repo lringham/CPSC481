@@ -36,7 +36,7 @@
                         <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/logo.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="Back" Content="Back" Margin="10" Click="Button_Click"/>
+                <Button x:Name="Back" Content="Back" Margin="10" Click="BackButton_Click"/>
             </Grid>
             <Button Content="Play" HorizontalAlignment="Left" Margin="85,390,0,0" VerticalAlignment="Top" Width="105" Height="50" Click="Button_Click">
                 <Button.Background>
