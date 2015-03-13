@@ -8,6 +8,6 @@ namespace ElderlyNetflix.Code
 {
     public interface INavigable
     {
-        void useState(object state);
+        void useState(params object[] state);
     }
 }

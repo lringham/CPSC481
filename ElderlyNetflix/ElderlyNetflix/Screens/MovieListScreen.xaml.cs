@@ -19,7 +19,7 @@ namespace ElderlyNetflix.Screens
     /// <summary>
     /// Interaction logic for RecentlyWatchedScreen.xaml
     /// </summary>
-    public partial class RecentlyWatchedScreen : UserControl
+    public partial class MovieListScreen : UserControl, INavigable
     {
         Dictionary<Video, Grid> videos = new Dictionary<Video, Grid>();
         Dictionary<int, Video> filteredVideos = new Dictionary<int, Video>();
@@ -28,19 +28,13 @@ namespace ElderlyNetflix.Screens
         int gridWidth = 1280;
         int col1Perc = 80;
         int col2Perc = 20;
-        int margin = 10;
+        int margin = 1;
         int rowHeight = 55;
         int fontSize = 18;
 
-        public RecentlyWatchedScreen()
+        public MovieListScreen()
         {
             InitializeComponent();
-
-            for (int i = 0; i < 20; i++)
-                if (i % 2 == 0)
-                    addResult(new Video("Movie " + i, "Horror", "Lee Ringham", "1961"));
-                else
-                    addResult(new Video("Movie " + 5, "Comedy", "Lee Ringham"));
         }
 
         private void addResult(Video video)
@@ -50,7 +44,7 @@ namespace ElderlyNetflix.Screens
             grid.HorizontalAlignment = HorizontalAlignment.Left;
             grid.VerticalAlignment = VerticalAlignment.Top;
             grid.ShowGridLines = false;
-            //grid.Background = new SolidColorBrush(Colors.CornflowerBlue);
+            //grid.Background = b;
 
             ColumnDefinition gridCol1 = new ColumnDefinition();
             ColumnDefinition gridCol2 = new ColumnDefinition();
@@ -60,13 +54,16 @@ namespace ElderlyNetflix.Screens
             grid.ColumnDefinitions.Add(gridCol2);
 
             TextBlock videoInfo = new TextBlock();
-            videoInfo.Margin = new Thickness(margin);
+            videoInfo.Margin = new Thickness(10, margin, 0, margin);
             videoInfo.Height = rowHeight;
             videoInfo.Text = video.toStringPretty();
             videoInfo.FontSize = fontSize;
             videoInfo.FontWeight = FontWeights.Bold;
             videoInfo.Foreground = new SolidColorBrush(Colors.Black);
             videoInfo.VerticalAlignment = VerticalAlignment.Top;
+            Brush brush = new SolidColorBrush(Colors.CornflowerBlue);
+            brush.Opacity = .1;
+            videoInfo.Background = brush;
             Grid.SetRow(videoInfo, 0);
             Grid.SetColumn(videoInfo, 0);
             grid.Children.Add(videoInfo);
@@ -162,6 +159,14 @@ namespace ElderlyNetflix.Screens
         {
             if (FilterTextBox.Text == "Filter Results")
                 FilterTextBox.Text = "";
+        }
+
+        public void useState(params object[] state)
+        {
+            header.Text = (string)state[0];
+            List<Video> videos = (List<Video>)state[1];
+            foreach(Video video in videos)
+                addResult(video);
         }
     }
 }
