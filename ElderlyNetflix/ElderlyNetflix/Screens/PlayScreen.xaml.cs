@@ -33,7 +33,7 @@ namespace ElderlyNetflix.Screens
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-
+            Navigator.navigateAndClearStack(new MainScreen());
         }
     }
 }
