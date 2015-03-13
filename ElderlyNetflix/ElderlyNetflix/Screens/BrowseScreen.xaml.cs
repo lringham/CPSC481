@@ -34,9 +34,9 @@ namespace ElderlyNetflix.Screens
         {
             InitializeComponent();
 
-            addCategory("Category 1");
-            addCategory("Category 2");
-
+            addCategory("Action");
+            addCategory("Drama");
+            addCategory("Comedy");
         }
 
         private void addCategory(String title)

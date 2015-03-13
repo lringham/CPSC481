@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElderlyNetflix.Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ElderlyNetflix.Code;
 
 namespace ElderlyNetflix.Screens
 {
     /// <summary>
-    /// Interaction logic for LoginScreen.xaml
+    /// Interaction logic for ProfileScreen.xaml
     /// </summary>
-    public partial class LoginScreen : UserControl
+    public partial class ProfileScreen : UserControl
     {
-        public LoginScreen()
+        public ProfileScreen()
         {
             InitializeComponent();
         }
@@ -31,9 +31,14 @@ namespace ElderlyNetflix.Screens
             Navigator.navigate(new MainScreen());
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.navigate(new ProfileScreen());
+            Navigator.navigateBack();
+        }
+
+        private void Profile_Click(object sender, RoutedEventArgs e)
+        {
+            Navigator.navigate(new MainScreen());
         }
     }
 }
