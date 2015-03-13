@@ -6,11 +6,18 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="White">
     <Grid>
-        <Grid Height="100" VerticalAlignment="Bottom" Margin="0,0,0,5">
+        <Grid.Background>
+            <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/jg.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="311*"/>
+            <RowDefinition Height="49*"/>
+        </Grid.RowDefinitions>
+        <Grid Height="90" Margin="0" VerticalAlignment="Top">
             <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7A0000"/>
-                    <GradientStop Color="Black" Offset="1"/>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4D4D4D"/>
+                    <GradientStop Color="#02BBBBBB" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.ColumnDefinitions>
@@ -23,8 +30,24 @@
                     <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/logo.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
-            <Button Content="Back" Margin="10" Click="Back_Click"/>
+            <Button x:Name="Back" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="90" BorderThickness="0" Click="Back_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/back.png" Stretch="Uniform">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.5" ScaleY="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
         </Grid>
-        <Image Margin="0,0,0,105" Source="/ElderlyNetflix;component/Assets/Images/imagesT9FUD0D5.jpg" Stretch="Fill"/>
+        <Slider HorizontalAlignment="Left" Margin="49,35.612,0,0" VerticalAlignment="Top" Height="39" Width="1172" Grid.Row="1"/>
+        <CheckBox Content="Subtitles" HorizontalAlignment="Left" Margin="1149,63,0,0" VerticalAlignment="Top" Grid.Row="1" Background="White" Foreground="White"/>
+        <Button x:Name="Play_Button" Content="►" HorizontalAlignment="Left" Margin="609,49,0,-3" VerticalAlignment="Top" Width="75" Grid.Row="1" FontSize="48" FontFamily="Aharoni" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Margin="50,61,0,0" Grid.Row="1" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
     </Grid>
 </UserControl>
