@@ -53,5 +53,10 @@ namespace ElderlyNetflix.Screens
             search = new SearchScreen();
             Navigator.navigate(search);
         }
+
+        private void Profile_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+
+        }
     }
 }
