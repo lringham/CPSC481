@@ -36,7 +36,7 @@ namespace ElderlyNetflix.Screens
             Navigator.navigateAndClearStack(new MainScreen());
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             Navigator.navigateBack();
         }

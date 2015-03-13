@@ -4,72 +4,92 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="720" d:DesignWidth="1280" Background="white">
-    <Grid HorizontalAlignment="Left" Height="685" Margin="650,0,0,25" VerticalAlignment="Bottom" Width="620" Background="Black">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="118*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="11*"/>
-        </Grid.RowDefinitions>
-        <Grid HorizontalAlignment="Left" Height="675" Margin="-615,0,0,0" VerticalAlignment="Top" Width="620" Grid.RowSpan="4">
+             d:DesignHeight="720" d:DesignWidth="1280" Background="White">
+    <StackPanel HorizontalAlignment="Center" Height="720" Margin="0,0,0,0" VerticalAlignment="Top" Width="1280">
+        <StackPanel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF464646" Offset="1"/>
+                <GradientStop Color="White"/>
+            </LinearGradientBrush>
+        </StackPanel.Background>
+        <Grid Height="90" Margin="0" VerticalAlignment="Top">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="#FFAE2626" Offset="1"/>
+                    <GradientStop Color="#FF4D4D4D"/>
+                    <GradientStop Color="#FFBBBBBB" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Grid Height="100" Margin="0,0,-615,575" VerticalAlignment="Bottom">
-                <Grid.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <GradientStop Color="#FF7A0000"/>
-                        <GradientStop Color="Black" Offset="1"/>
-                    </LinearGradientBrush>
-                </Grid.Background>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="108*"/>
-                    <ColumnDefinition Width="25*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Height="70" Margin="0" Width="177" Click="Home_Click" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/logo.png" Stretch="Uniform"/>
-                    </Button.Background>
-                </Button>
-                <Button x:Name="Back" Content="Back" Margin="10" Click="BackButton_Click"/>
-            </Grid>
-            <Button Content="Play" HorizontalAlignment="Left" Margin="85,390,0,0" VerticalAlignment="Top" Width="105" Height="50" Click="Button_Click">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="108*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="1" Height="70" Margin="0" Width="177" Source="/ElderlyNetflix;component/Assets/Images/logo.png" />
+
+            <!--<Button Grid.Column="1" Height="70" Margin="0" Width="177" Click="Home_Click" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
-                        <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
-                        <GradientStop Color="#FFF6F6FB" Offset="0.5"/>
-                        <GradientStop Color="#FFCDCDCD" Offset="1"/>
-                    </LinearGradientBrush>
+                    <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/logo.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
-            <Button Content="Save" HorizontalAlignment="Left" Height="50" Margin="85,460,0,0" VerticalAlignment="Top" Width="105"/>
-            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="15" Margin="55,330,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5">
-                <CheckBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleY="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </CheckBox.RenderTransform>
-            </CheckBox>
-            <Label Content="  Subtitles" FontSize="16" HorizontalAlignment="Left" Margin="85,325,0,0" VerticalAlignment="Top" Width="95" Background="#FF165DF3" RenderTransformOrigin="0.5,0.5">
-                <Label.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.107"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Label.RenderTransform>
-            </Label>
+            <Button x:Name="Profile" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" Width="160" BorderThickness="0" Margin="0" >
+                <Button.Background>
+                    <ImageBrush Stretch="None" ImageSource="/ElderlyNetflix;component/Assets/Images/profile.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.75" ScaleY="0.75"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Button.Background>
+            </Button>-->
+            <Button x:Name="Back" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="90" BorderThickness="0" Click="Back_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/back.png" Stretch="Uniform">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.5" ScaleY="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
         </Grid>
-        <Image Margin="85,70,85,55" Source="/ElderlyNetflix;component/Assets/Images/imagesQVQDDBR3.jpg" Stretch="Fill" Grid.Row="1"/>
-    </Grid>
+        <Grid Height="630" Width="1280">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="550" />
+                <ColumnDefinition Width="550" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="357"/>
+                <RowDefinition Height="149.6" />
+                <RowDefinition Height="22.4"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="Title" Text="THE PIANIST" Margin="10,10,10,10" FontSize="24" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="1" />
+            <Grid Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="PlotTitle" Text="PLOT" Margin="10,10,10,10" FontSize="24" Width="Auto" Height="40" Grid.Row="0" />
+                <TextBlock x:Name="Plot" Margin="10,0,0,0" FontSize="18" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor ante, ultrices feugiat iaculis ut, auctor sit amet tortor. Fusce malesuada id nisi a ultrices. Quisque sed placerat quam, placerat iaculis sapien. Nullam nec facilisis risus. Aenean venenatis nulla quis ipsum tempus, vel convallis nisl pharetra. Quisque placerat erat eget libero lobortis, sed sodales orci fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin cursus vestibulum nisi. Pellentesque semper lacus at sapien vestibulum, tincidunt lobortis sem efficitur." Grid.Row="1" TextWrapping="Wrap"/>
+            </Grid>
+            <Image Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" Source="/ElderlyNetflix;component/Assets/Images/imagesQVQDDBR3.jpg"/>
+            <Grid Grid.Column="1" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="255"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Save" Grid.Column="0" HorizontalAlignment="Left" Width="246" Margin="295,0,-285,0" FontSize="36"/>
+                <Button Content="Play" Grid.Column="0" HorizontalAlignment="Left" Width="246" FontSize="36" Background="#FFDDDDDD" />
+            </Grid>
+        </Grid>
+    </StackPanel>
 </UserControl>
