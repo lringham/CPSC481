@@ -69,7 +69,7 @@ namespace ElderlyNetflix.Screens
             grid.Children.Add(videoInfo);
 
             Button videoButton = new Button();
-            videoButton.Content = "Play";
+            videoButton.Content = "More Info";
             videoButton.Click += new RoutedEventHandler(videoClicked);
             Grid.SetRow(videoButton, 0);
             Grid.SetColumn(videoButton, 1);
