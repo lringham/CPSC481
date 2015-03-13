@@ -21,10 +21,9 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class MainScreen : UserControl
     {
-        private static SearchScreen search;
         private static BrowseScreen browse;
-        private static FavoritesScreen saved;
-        private static RecentlyWatchedScreen recent;
+        private static MovieListScreen movieList;
+        private static SearchScreen search;
 
         public MainScreen()
         {
@@ -33,14 +32,14 @@ namespace ElderlyNetflix.Screens
 
         private void Recent_Click(object sender, RoutedEventArgs e)
         {
-            recent = new RecentlyWatchedScreen();
-            Navigator.navigate(recent);
+            movieList = new MovieListScreen();
+            Navigator.navigate(movieList, "Recently Watched Movies", FakeDatabase.getRecentVideos());
         }
 
         private void Saved_Click(object sender, RoutedEventArgs e)
         {
-            saved = new FavoritesScreen();
-            Navigator.navigate(saved);
+            movieList = new MovieListScreen();
+            Navigator.navigate(movieList, "Favorite Movies", FakeDatabase.getFavoriteVideos());
         }
 
         private void Browse_Click(object sender, RoutedEventArgs e)

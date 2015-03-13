@@ -50,7 +50,7 @@ namespace ElderlyNetflix.Code
         /// </summary>
         /// <param name="screen"></param>
         /// <param name="state"></param>
-        public static void navigate(UserControl screen, object state)
+        public static void navigate(UserControl screen, params object[] state)
         {
             //Check if the window has been set
             checkWindowSet();

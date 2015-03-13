@@ -41,9 +41,9 @@ namespace ElderlyNetflix.Screens
             Navigator.navigateBack();
         }
 
-        public void useState(object state)
+        public void useState(params object[] state)
         {
-            Video video = (Video)state;
+            Video video = (Video)state[0];
 
         }
     }
