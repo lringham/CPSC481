@@ -33,7 +33,7 @@ namespace ElderlyNetflix.Screens
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.navigateBack();
+            Navigator.navigate(new LoginScreen());
         }
 
         private void Profile_Click(object sender, RoutedEventArgs e)

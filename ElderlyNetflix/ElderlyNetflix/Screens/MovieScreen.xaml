@@ -88,7 +88,7 @@
                     <ColumnDefinition Width="255"/>
                 </Grid.ColumnDefinitions>
                 <Button Content="Save" Grid.Column="0" HorizontalAlignment="Left" Width="246" Margin="295,0,-285,0" FontSize="36"/>
-                <Button Content="Play" Grid.Column="0" HorizontalAlignment="Left" Width="246" FontSize="36" Background="#FFDDDDDD" />
+                <Button Content="Play" Grid.Column="0" HorizontalAlignment="Left" Width="246" FontSize="36" Background="#FFDDDDDD" Click="Button_Click" />
             </Grid>
         </Grid>
     </StackPanel>
