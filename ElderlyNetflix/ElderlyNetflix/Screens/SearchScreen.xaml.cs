@@ -38,7 +38,8 @@ namespace ElderlyNetflix.Screens
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.navigate(new MovieListScreen(), "Search Results for \""+SearchBar.Text+"\"", FakeDatabase.getSearchedVideos());
+            if (SearchBar.Text != "Search for Name, Director, Year or Actor" && SearchBar.Text != "")
+                Navigator.navigate(new MovieListScreen(), "Search Results for \""+SearchBar.Text+"\"", FakeDatabase.getSearchedVideos());
         }
 
         private void SearchBar_GotFocus(object sender, RoutedEventArgs e)
