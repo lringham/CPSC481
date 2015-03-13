@@ -122,7 +122,7 @@ namespace ElderlyNetflix.Screens
             // Info button
             Button infoButton = new Button();
             infoButton.Content = "More Info";
-            infoButton.Background = Brushes.Gray;
+            //infoButton.Background = Brushes.Gray;
             //infoButton.Width = 80;
             //infoButton.Style.Triggers.Is
             infoButton.Click += new RoutedEventHandler(Info_Click);
