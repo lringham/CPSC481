@@ -89,7 +89,7 @@ namespace ElderlyNetflix.Screens
 
             foreach (KeyValuePair<Video, Grid> videoPair in videos)
             {
-                if (!videoPair.Key.name.ToUpper().Contains(filterText))
+                if (!videoPair.Key.contains(filterText))
                 {
                     filteredVideos.Add(i, videoPair.Key);
                     ResultsStackPanel.Children.Remove(videoPair.Value);
@@ -167,6 +167,15 @@ namespace ElderlyNetflix.Screens
             List<Video> videos = (List<Video>)state[1];
             foreach(Video video in videos)
                 addResult(video);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {            
+            if (filteredVideos.Count > 0)
+                removeFilter();
+
+            if (FilterTextBox.Text != "" && FilterTextBox.Text != "Filter Results")
+                filter(FilterTextBox.Text);
         }
     }
 }
