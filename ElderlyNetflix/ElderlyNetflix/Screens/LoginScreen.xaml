@@ -16,18 +16,22 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Grid HorizontalAlignment="Center" Height="431" Margin="804,70,90,0" Width="403" Background="Red" Opacity="100" VerticalAlignment="Top">
+        <Grid HorizontalAlignment="Center" Height="431" Margin="562,94,215,0" Width="503" Background="Red" Opacity="100" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="217*"/>
+                <RowDefinition Height="214*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="173*"/>
                 <ColumnDefinition Width="226*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Username" HorizontalAlignment="Left" Height="30" Margin="59,114,0,0" VerticalAlignment="Top" Width="104" Background="White"/>
-            <Label Content="Password" HorizontalAlignment="Left" Height="29" Margin="59,162,0,0" VerticalAlignment="Top" Width="104" Background="White"/>
-            <TextBox HorizontalAlignment="Left" Height="30" Margin="5,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Grid.Column="1"/>
-            <TextBox HorizontalAlignment="Left" Height="31" Margin="5,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Grid.Column="1"/>
-            <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="123,288,0,110" Width="93" Background="White" Grid.Column="1" Click="Login_Click"/>
-            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="15" Margin="56,206,0,0" VerticalAlignment="Top" Width="16" RenderTransformOrigin="-1.812,0.333" Grid.Column="1"/>
-            <Label Content="Remember My Username" Grid.Column="1" HorizontalAlignment="Right" Height="30" Margin="0,200,10,0" VerticalAlignment="Top" Width="Auto" Padding="5,5,0,5" />
+            <TextBox HorizontalAlignment="Left" Height="37" Margin="201,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.ColumnSpan="2"/>
+            <TextBox HorizontalAlignment="Left" Height="31" Margin="201,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.ColumnSpan="2"/>
+            <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="115,85,0,60" Width="93" Background="White" Grid.Column="1" Click="Login_Click" FontSize="25" Grid.Row="1"/>
+            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="15" Margin="92,29,0,0" VerticalAlignment="Top" Width="16" RenderTransformOrigin="-1.812,0.333" FontSize="20" Grid.Row="1"/>
+            <Label Content="Remember My Username and password" HorizontalAlignment="Right" Height="42" Margin="0,24,10,0" VerticalAlignment="Top" Width="366" Padding="5,5,0,5" Grid.Row="1" FontSize="20" Grid.ColumnSpan="2" />
+            <TextBlock HorizontalAlignment="Left" Height="37" Margin="25,112,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="131" FontSize="25"/>
+            <TextBlock HorizontalAlignment="Left" Height="53" Margin="25,176,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="146" FontSize="25" Grid.RowSpan="2"/>
         </Grid>
         <Grid Height="100" Margin="0,0,0,0" VerticalAlignment="Bottom">
             <Grid.Background>
