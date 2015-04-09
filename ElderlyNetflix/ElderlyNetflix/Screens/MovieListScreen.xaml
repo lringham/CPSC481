@@ -46,9 +46,9 @@
             <TextBox x:Name="FilterTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="855,32,0,0" TextWrapping="Wrap" Text="Filter Results" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" VerticalContentAlignment="Center" LostFocus="FilterTextBox_LostFocus" GotFocus="FilterTextBox_GotFocus" KeyUp="FilterTextBox_KeyUp"/>
             <Button Content="Filter" Grid.Column="2" HorizontalAlignment="Left" Margin="100,32,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="Button_Click"/>
         </Grid>
-        <TextBlock x:Name="header" Text= "Header" FontSize="24" Padding="10,3,0,0"/>
+        <TextBlock x:Name="header" Text= "Header" FontSize="24" Padding="240,3,0,0"/>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" CanContentScroll="True">
-            <StackPanel x:Name="ResultsStackPanel" Margin="0,0,0,100" VerticalAlignment="Top" Height="990"/>
+            <StackPanel x:Name="ResultsStackPanel" Margin="0,0,0,100" VerticalAlignment="Top" Height="611"/>
         </ScrollViewer>
     </StackPanel>
 </UserControl>

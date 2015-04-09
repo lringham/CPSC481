@@ -25,13 +25,6 @@ namespace ElderlyNetflix.Screens
         List<Video> displayedVideos = new List<Video>();
         Dictionary<Button, KeyValuePair<Video, Grid>> videoMap = new Dictionary<Button, KeyValuePair<Video, Grid>>();
 
-        int gridWidth = 1280;
-        int col1Perc = 80;
-        int col2Perc = 20;
-        int margin = 1;
-        int rowHeight = 55;
-        int fontSize = 18;
-
         public MovieListScreen()
         {
             InitializeComponent();
@@ -48,6 +41,7 @@ namespace ElderlyNetflix.Screens
 
         private void addResult(Video video)
         {
+            int gridWidth = 1280;
             Grid grid = new Grid();
             grid.Width = gridWidth;
             grid.HorizontalAlignment = HorizontalAlignment.Left;
@@ -55,15 +49,45 @@ namespace ElderlyNetflix.Screens
             grid.ShowGridLines = false;
             //grid.Background = b;
 
+            int col0Perc = 15;
+            int col1Perc = 10;
+            int col2Perc = 40;
+            int col3Perc = 20;
+            int col4Perc = 15;
+            ColumnDefinition gridCol0 = new ColumnDefinition();
             ColumnDefinition gridCol1 = new ColumnDefinition();
             ColumnDefinition gridCol2 = new ColumnDefinition();
+            ColumnDefinition gridCol3 = new ColumnDefinition();
+            ColumnDefinition gridCol4 = new ColumnDefinition();
+            gridCol0.Width = new GridLength(col0Perc, GridUnitType.Star);
             gridCol1.Width = new GridLength(col1Perc, GridUnitType.Star);
             gridCol2.Width = new GridLength(col2Perc, GridUnitType.Star);
+            gridCol3.Width = new GridLength(col3Perc, GridUnitType.Star);
+            gridCol4.Width = new GridLength(col4Perc, GridUnitType.Star);
+            grid.ColumnDefinitions.Add(gridCol0);
             grid.ColumnDefinitions.Add(gridCol1);
             grid.ColumnDefinitions.Add(gridCol2);
+            grid.ColumnDefinitions.Add(gridCol3);
+            grid.ColumnDefinitions.Add(gridCol4);
 
+            //image
+            Image art = new Image();
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.UriSource = new Uri("/ElderlyNetflix;component/Assets/Images/icon.png", UriKind.Relative);
+            bi.EndInit();
+            art.Stretch = Stretch.Uniform;
+            art.Source = bi;
+            art.Height = 45;
+            art.Width = art.Height / 2;
+            Grid.SetColumn(art, 1);
+            grid.Children.Add(art);
+
+            //Movie description
+            int rowHeight = 55;
+            int fontSize = 18;
             TextBlock videoInfo = new TextBlock();
-            videoInfo.Margin = new Thickness(10, margin, 0, margin);
+            videoInfo.Margin = new Thickness(10, 1, 0, 1);
             videoInfo.Height = rowHeight;
             videoInfo.Text = video.toStringPretty();
             videoInfo.FontSize = fontSize;
@@ -74,14 +98,16 @@ namespace ElderlyNetflix.Screens
             brush.Opacity = .1;
             videoInfo.Background = brush;
             Grid.SetRow(videoInfo, 0);
-            Grid.SetColumn(videoInfo, 0);
+            Grid.SetColumn(videoInfo, 2);
             grid.Children.Add(videoInfo);
 
+            //button
             Button videoButton = new Button();
-            videoButton.Content = "More Info";
+            videoButton.Content = "Play";
+            videoButton.Margin = new Thickness(0, 1, 10, 1);
             videoButton.Click += new RoutedEventHandler(videoClicked);
             Grid.SetRow(videoButton, 0);
-            Grid.SetColumn(videoButton, 1);
+            Grid.SetColumn(videoButton, 3);
             grid.Children.Add(videoButton);
 
             ResultsStackPanel.Children.Add(grid);
