@@ -30,8 +30,8 @@ namespace ElderlyNetflix.Code
         public String toStringPretty()
         {
             String info =  
-                (year           != "" ? " (" + year +")"    : "") + //print the year if it exsists                
-                (genre+director != "" ? "\n"                : "") + //print a newline if there is more movie info
+                (year           != "" ? " (" + year +")"    : "") + 
+                (genre+director != "" ? "\n"                : "") + 
                 (director       != "" ? director + ", "     : "") + 
                 (genre          != "" ? genre               : "");
 
@@ -41,9 +41,20 @@ namespace ElderlyNetflix.Code
             else
                 return name + info;
         }
-        
+
+        public String toStringSimple()
+        {
+            String info =
+                (year != "" ? " (" + year + ")" : "") +
+                (director != "" ? ", " + director : "") +
+                (genre != "" ? ", " + genre : "");
+
+            return name + info;
+        }
+
         public bool contains(String search)
         {
+            search = search.ToUpper();
             bool result = name.ToUpper().IndexOf(search) > -1 || genre.ToUpper().IndexOf(search) > -1 || director.ToUpper().IndexOf(search) > -1 || year.ToUpper().IndexOf(search) > -1;
             if (result) 
                 return result;

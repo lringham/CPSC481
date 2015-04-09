@@ -21,9 +21,12 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class SearchScreen : UserControl
     {
+        Dictionary<TextBlock, Video> suggestions = new Dictionary<TextBlock, Video>();
+
         public SearchScreen()
         {
             InitializeComponent();
+            suggestionsBox.Height = 0;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
@@ -52,6 +55,53 @@ namespace ElderlyNetflix.Screens
         {
             if (SearchBar.Text == "")
                 SearchBar.Text = "Search for Name, Director, Year or Actor";
+        }
+
+        private void addSuggestion(Video video)
+        {
+            int fontSize = 18;
+            TextBlock text = new TextBlock();
+            text.Margin = new Thickness(5, 0, 0, 0);
+            text.Text = video.toStringSimple();
+            text.FontSize = fontSize;
+            text.VerticalAlignment = VerticalAlignment.Top;
+            text.MouseDown += new MouseButtonEventHandler(suggestionClicked);
+
+            suggestionsBox.Children.Add(text);
+            suggestionsBox.Height = suggestions.Count * text.Height;
+            suggestions.Add(text, video);
+        }
+
+        private void addSuggestions(List<Video> suggestions)
+        {
+            foreach (Video video in suggestions)           
+                addSuggestion(video);        
+        }
+
+        private void clearSuggestions()
+        {
+            foreach (KeyValuePair<TextBlock, Video> suggestion in suggestions)
+                suggestionsBox.Children.Remove(suggestion.Key);
+            suggestions.Clear();
+        }
+
+        private void SearchBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Return)
+                Navigator.navigate(new MovieListScreen(), "Search Results for \"" + SearchBar.Text + "\"", FakeDatabase.getSearchedVideos());
+        }
+
+        private void SearchBar_KeyUp(object sender, KeyEventArgs e)
+        {
+            clearSuggestions();
+            if (SearchBar.Text != "")
+                addSuggestions(FakeDatabase.getSuggestedVideos(SearchBar.Text));
+        }
+
+        private void suggestionClicked(object sender, RoutedEventArgs e)
+        {
+            Video video = suggestions[(TextBlock)sender];
+            Navigator.navigate(new MovieScreen());
         }
     }
 }

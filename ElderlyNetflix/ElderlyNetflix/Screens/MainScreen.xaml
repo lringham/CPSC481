@@ -96,19 +96,5 @@
                 </ImageBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="Back" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="90" BorderThickness="0" Click="Back_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/back.png" Stretch="Uniform">
-                    <ImageBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.5" ScaleY="0.5"/>
-                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </ImageBrush.RelativeTransform>
-                </ImageBrush>
-            </Button.Background>
-        </Button>
     </Grid>
 </UserControl>

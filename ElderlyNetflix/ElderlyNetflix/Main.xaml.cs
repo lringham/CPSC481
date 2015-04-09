@@ -24,6 +24,7 @@ namespace ElderlyNetflix
         public Main()
         {
             InitializeComponent();
+            FakeDatabase.initalize();
             Navigator.setWindow(this);
             Navigator.navigate(new LoginScreen()); //Navigate to the starting screen
         }
