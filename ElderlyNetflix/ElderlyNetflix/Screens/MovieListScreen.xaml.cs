@@ -21,9 +21,9 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class MovieListScreen : UserControl, INavigable
     {
-        Dictionary<Video, Grid> videos = new Dictionary<Video, Grid>();
-        Dictionary<int, Video> filteredVideos = new Dictionary<int, Video>();
-        Dictionary<Button, Video> buttonVideoMap = new Dictionary<Button, Video>();
+        List<Video> videos = new List<Video>();
+        List<Video> displayedVideos = new List<Video>();
+        Dictionary<Button, KeyValuePair<Video, Grid>> videoMap = new Dictionary<Button, KeyValuePair<Video, Grid>>();
 
         int gridWidth = 1280;
         int col1Perc = 80;
@@ -35,6 +35,15 @@ namespace ElderlyNetflix.Screens
         public MovieListScreen()
         {
             InitializeComponent();
+        }
+
+        public void displayVideos()
+        {
+            clearStackPanel();
+            videoMap.Clear();
+
+            foreach (Video video in displayedVideos)            
+                addResult(video);            
         }
 
         private void addResult(Video video)
@@ -76,61 +85,37 @@ namespace ElderlyNetflix.Screens
             grid.Children.Add(videoButton);
 
             ResultsStackPanel.Children.Add(grid);
-            videos.Add(video, grid);
-            buttonVideoMap.Add(videoButton, video);
+            videoMap.Add(videoButton, new KeyValuePair<Video, Grid>(video, grid));
         }
 
         public void filter(string filterText)
         {
-            filteredVideos.Clear();
-
-            int i = 0;
+            displayedVideos.Clear();
             filterText = filterText.ToUpper();
 
-            foreach (KeyValuePair<Video, Grid> videoPair in videos)
+            foreach (Video video in videos)
             {
-                if (!videoPair.Key.contains(filterText))
-                {
-                    filteredVideos.Add(i, videoPair.Key);
-                    ResultsStackPanel.Children.Remove(videoPair.Value);
-                }
-                i++;
+                if (video.contains(filterText))               
+                    displayedVideos.Add(video);                
             }
 
-            foreach (KeyValuePair<int, Video> videoPair in filteredVideos)
-            {
-                videos.Remove(videoPair.Value);
-            }
+            displayVideos();
         }
 
         public void clearStackPanel()
         {
-            foreach (KeyValuePair<Video, Grid> videoPair in videos)
-                ResultsStackPanel.Children.Remove(videoPair.Value);
+            foreach (KeyValuePair<Button, KeyValuePair<Video, Grid>> videoPair in videoMap)
+                ResultsStackPanel.Children.Remove(videoPair.Value.Value);
         }
 
         public void removeFilter()
         {
-            clearStackPanel();
-            List<Video> videosInOrder = new List<Video>();
+            displayedVideos.Clear();
 
-            int totalVideoCount = videos.Count + filteredVideos.Count;
-            int j = 0;
-            for (int i = 0; i < totalVideoCount; ++i)
-            {
-                Video video;
-                if (filteredVideos.TryGetValue(i, out video))
-                    videosInOrder.Add(video);
-                else if (videos.Keys.Count > j)
-                    videosInOrder.Add(videos.Keys.ElementAt<Video>(j++));
-                else
-                    throw new Exception("Invald video...?! This should never happen");
-            }
-
-            videos.Clear();
-            buttonVideoMap.Clear();
-            foreach (Video video in videosInOrder)
-                addResult(video);
+            foreach (Video video in videos)           
+                    displayedVideos.Add(video);
+            
+            displayVideos();
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
@@ -145,7 +130,7 @@ namespace ElderlyNetflix.Screens
 
         private void videoClicked(object sender, RoutedEventArgs e)
         {
-            Video video = buttonVideoMap[(Button)sender];
+            Video video = videoMap[(Button)sender].Key;
             Navigator.navigate(new MovieScreen(), video);
         }
 
@@ -164,18 +149,22 @@ namespace ElderlyNetflix.Screens
         public void useState(params object[] state)
         {
             header.Text = (string)state[0];
-            List<Video> videos = (List<Video>)state[1];
-            foreach(Video video in videos)
-                addResult(video);
+            videos = (List<Video>)state[1];
+            displayedVideos.AddRange(videos.GetRange(0, videos.Count));
+            displayVideos();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {            
-            if (filteredVideos.Count > 0)
-                removeFilter();
-
+        {
             if (FilterTextBox.Text != "" && FilterTextBox.Text != "Filter Results")
                 filter(FilterTextBox.Text);
+            else
+                removeFilter();
+        }
+
+        private void FilterTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            filter(FilterTextBox.Text);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace ElderlyNetflix.Code
                 if (i % 2 == 0)
                     videos.Add(new Video("Movie " + i, "Horror", "Lee Ringham", "1961"));
                 else
-                    videos.Add(new Video("Movie " + 5, "Comedy", "Lee Ringham"));
+                    videos.Add(new Video("Movie " + i, "Comedy", "Lee Ringham"));
             return videos;
         }
 
