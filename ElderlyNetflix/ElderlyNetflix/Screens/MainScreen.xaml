@@ -75,7 +75,7 @@
                             <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="0.75" ScaleX="-0.75"/>
                             <SkewTransform AngleY="0" AngleX="0" CenterY="0.5" CenterX="0.5"/>
                             <RotateTransform Angle="0" CenterY="0.5" CenterX="0.5"/>
-                            <TranslateTransform/>
+                            <TranslateTransform X="-0.07" Y="0.02"/>
                         </TransformGroup>
                     </ImageBrush.RelativeTransform>
                 </ImageBrush>
