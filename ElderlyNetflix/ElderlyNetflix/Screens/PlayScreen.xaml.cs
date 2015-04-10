@@ -24,6 +24,22 @@ namespace ElderlyNetflix.Screens
         public PlayScreen()
         {
             InitializeComponent();
+
+            Image img = new Image();
+            img.Source = new BitmapImage(new Uri("/Assets/Images/logo.png", UriKind.Relative));
+            homeButton.Content = img;
+
+            img = new Image();
+            img.Source = new BitmapImage(new Uri("/Assets/Images/back.png", UriKind.Relative));
+            img.Height = 50;
+            img.Width = 50;
+            backButton.Content = img;
+
+            img = new Image();
+            img.Height = 75;
+            img.Width = 75;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/profile.png", UriKind.Relative));
+            profileButton.Content = img;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -34,6 +50,11 @@ namespace ElderlyNetflix.Screens
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             Navigator.navigateAndClearStack(new MainScreen());
+        }
+
+        private void scrubberBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            playbackText.Text = scrubberBar.Value.ToString();
         }
     }
 }

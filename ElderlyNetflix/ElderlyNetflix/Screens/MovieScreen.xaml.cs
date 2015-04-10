@@ -24,6 +24,22 @@ namespace ElderlyNetflix.Screens
         public MovieScreen()
         {
             InitializeComponent();
+
+            Image img = new Image();
+            img.Source = new BitmapImage(new Uri("/Assets/Images/logo.png", UriKind.Relative));
+            homeButton.Content = img;
+
+            img = new Image();
+            img.Source = new BitmapImage(new Uri("/Assets/Images/back.png", UriKind.Relative));
+            img.Height = 50;
+            img.Width = 50;
+            backButton.Content = img;
+
+            img = new Image();
+            img.Height = 75;
+            img.Width = 75;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/profile.png", UriKind.Relative));
+            profileButton.Content = img;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
