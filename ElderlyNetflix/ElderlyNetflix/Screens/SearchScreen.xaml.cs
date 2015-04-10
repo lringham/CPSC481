@@ -26,6 +26,23 @@ namespace ElderlyNetflix.Screens
         public SearchScreen()
         {
             InitializeComponent();
+
+            Image img = new Image();
+            img.Source = new BitmapImage(new Uri("/Assets/Images/logo.png", UriKind.Relative));
+            homeButton.Content = img;
+
+            img = new Image();
+            img.Source = new BitmapImage(new Uri("/Assets/Images/back.png", UriKind.Relative));
+            img.Height = 50;
+            img.Width = 50;
+            backButton.Content = img;
+
+            img = new Image();
+            img.Height = 75;
+            img.Width = 75;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/profile.png", UriKind.Relative));
+            profileButton.Content = img;
+
             suggestionsBox.Height = 0;
         }
 
@@ -66,6 +83,8 @@ namespace ElderlyNetflix.Screens
             text.FontSize = fontSize;
             text.VerticalAlignment = VerticalAlignment.Top;
             text.MouseDown += new MouseButtonEventHandler(suggestionClicked);
+            text.MouseEnter += new MouseEventHandler(mouseEnter);
+            text.MouseLeave += new MouseEventHandler(mouseLeave);
 
             suggestionsBox.Children.Add(text);
             suggestionsBox.Height = suggestions.Count * text.Height;
@@ -102,6 +121,16 @@ namespace ElderlyNetflix.Screens
         {
             Video video = suggestions[(TextBlock)sender];
             Navigator.navigate(new MovieScreen());
+        }
+
+        private void mouseEnter(object sender, RoutedEventArgs e)
+        {
+            ((TextBlock)sender).Background = Brushes.CornflowerBlue;
+        }
+
+        private void mouseLeave(object sender, RoutedEventArgs e)
+        {
+            ((TextBlock)sender).Background = Brushes.White;
         }
     }
 }

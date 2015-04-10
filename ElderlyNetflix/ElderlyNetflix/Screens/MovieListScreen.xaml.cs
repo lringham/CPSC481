@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Resources; 
+
 using ElderlyNetflix.Code;
 
 namespace ElderlyNetflix.Screens
@@ -28,6 +30,16 @@ namespace ElderlyNetflix.Screens
         public MovieListScreen()
         {
             InitializeComponent();
+
+            Image img = new Image();
+            img.Source = new BitmapImage(new Uri("/Assets/Images/logo.png", UriKind.Relative));
+            homeButton.Content = img;
+
+            img = new Image();
+            img.Source = new BitmapImage(new Uri("/Assets/Images/back.png", UriKind.Relative));
+            img.Height = 50;
+            img.Width = 50;
+            backButton.Content = img;
         }
 
         public void displayVideos()
@@ -47,12 +59,11 @@ namespace ElderlyNetflix.Screens
             grid.HorizontalAlignment = HorizontalAlignment.Left;
             grid.VerticalAlignment = VerticalAlignment.Top;
             grid.ShowGridLines = false;
-            //grid.Background = b;
 
             int col0Perc = 15;
             int col1Perc = 10;
-            int col2Perc = 40;
-            int col3Perc = 20;
+            int col2Perc = 50;
+            int col3Perc = 10;
             int col4Perc = 15;
             ColumnDefinition gridCol0 = new ColumnDefinition();
             ColumnDefinition gridCol1 = new ColumnDefinition();
@@ -70,46 +81,81 @@ namespace ElderlyNetflix.Screens
             grid.ColumnDefinitions.Add(gridCol3);
             grid.ColumnDefinitions.Add(gridCol4);
 
-            //image
-            Image art = new Image();
-            BitmapImage bi = new BitmapImage();
-            bi.BeginInit();
-            bi.UriSource = new Uri("/ElderlyNetflix;component/Assets/Images/icon.png", UriKind.Relative);
-            bi.EndInit();
-            art.Stretch = Stretch.Uniform;
-            art.Source = bi;
-            art.Height = 45;
-            art.Width = art.Height / 2;
-            Grid.SetColumn(art, 1);
-            grid.Children.Add(art);
+            RowDefinition gridRow0 = new RowDefinition();
+            grid.RowDefinitions.Add(gridRow0);
+            RowDefinition gridRow1 = new RowDefinition();
+            grid.RowDefinitions.Add(gridRow1);
 
-            //Movie description
-            int rowHeight = 55;
-            int fontSize = 18;
-            TextBlock videoInfo = new TextBlock();
-            videoInfo.Margin = new Thickness(10, 1, 0, 1);
-            videoInfo.Height = rowHeight;
-            videoInfo.Text = video.toStringPretty();
-            videoInfo.FontSize = fontSize;
-            videoInfo.FontWeight = FontWeights.Bold;
-            videoInfo.Foreground = new SolidColorBrush(Colors.Black);
-            videoInfo.VerticalAlignment = VerticalAlignment.Top;
             Brush brush = new SolidColorBrush(Colors.CornflowerBlue);
             brush.Opacity = .1;
-            videoInfo.Background = brush;
-            Grid.SetRow(videoInfo, 0);
+            Background = brush;
+            Rectangle bg = new Rectangle();
+            bg.Fill = brush;
+            Grid.SetColumnSpan(bg, 3);
+            Grid.SetRowSpan(bg, 2);
+            Grid.SetRow(bg, 0);
+            Grid.SetColumn(bg, 1);
+            bg.Margin = new Thickness(0, 0, 0, 5);
+            grid.Children.Add(bg);
+
+            //image
+            Image art = new Image();
+            art.Margin = new Thickness(0, 0, 0, 5);
+            art.Stretch = Stretch.Uniform;
+            art.Source = new BitmapImage(new Uri("/Assets/Images/icon.png", UriKind.Relative));
+            art.Height = 100;
+            art.Width = 100;            
+            Grid.SetColumn(art, 1);
+            Grid.SetRowSpan(art, 2);
+            grid.Children.Add(art);
+
+            //title textblock
+            TextBlock videoTitle = new TextBlock();
+            videoTitle.Text = video.name;
+            videoTitle.Margin = new Thickness(0, 0, 0, 0);
+            videoTitle.Height = 30;
+            videoTitle.FontSize = 24;
+            videoTitle.Foreground = new SolidColorBrush(Colors.Black);
+            videoTitle.VerticalAlignment = VerticalAlignment.Top;
+
+            //videoTitle.Background = brush;
+            Grid.SetRowSpan(videoTitle, 1);
+            Grid.SetRow(videoTitle, 0);
+            Grid.SetColumn(videoTitle, 2);
+            grid.Children.Add(videoTitle);
+
+            //Movie description
+            int fontSize = 18;
+            TextBlock videoInfo = new TextBlock();
+            videoInfo.Margin = new Thickness(0, 0, 0, 5);
+            videoInfo.Height = 80;
+            videoInfo.Text = video.toStringPretty();
+            videoInfo.FontSize = fontSize;
+            videoInfo.Foreground = new SolidColorBrush(Colors.Black);
+            videoInfo.VerticalAlignment = VerticalAlignment.Top;
+            Grid.SetRowSpan(videoInfo, 1);
+            Grid.SetRow(videoInfo, 1);
             Grid.SetColumn(videoInfo, 2);
             grid.Children.Add(videoInfo);
 
             //button
             Button videoButton = new Button();
-            videoButton.Content = "Play";
-            videoButton.Margin = new Thickness(0, 1, 10, 1);
+            Image img = new Image();
+            img.Height = 100;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/arrow.png", UriKind.Relative));
+            videoButton.Content = img;
+            Brush buttonBrush = new SolidColorBrush(Colors.White);
+            buttonBrush.Opacity = 0;
+            videoButton.Background = buttonBrush;
+            videoButton.BorderThickness = new Thickness(0);
+            videoButton.FontSize = 32;
+            videoButton.Margin = new Thickness(0, 1, 10, 5);
             videoButton.Click += new RoutedEventHandler(videoClicked);
+            Grid.SetRowSpan(videoButton, 2);
             Grid.SetRow(videoButton, 0);
             Grid.SetColumn(videoButton, 3);
             grid.Children.Add(videoButton);
-
+            
             ResultsStackPanel.Children.Add(grid);
             videoMap.Add(videoButton, new KeyValuePair<Video, Grid>(video, grid));
         }
