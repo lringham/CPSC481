@@ -57,25 +57,45 @@
                 <RowDefinition Height="30" />
                 <RowDefinition Height="70" />
                 <RowDefinition Height="357"/>
-                <RowDefinition Height="149.6" />
-                <RowDefinition Height="22.4"/>
+                <RowDefinition Height="133" />
+                <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="Title" Text="THE PIANIST" Margin="10,10,10,10" FontSize="24" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="1" />
+            <TextBlock x:Name="Title" Text="THE PIANIST" Margin="10,10,10,10" FontSize="36" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="1" FontWeight="Bold" />
             <Grid Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="PlotTitle" Text="PLOT" Margin="10,10,10,10" FontSize="24" Width="Auto" Height="40" Grid.Row="0" />
-                <TextBlock x:Name="Plot" Margin="10,0,0,0" FontSize="18" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor ante, ultrices feugiat iaculis ut, auctor sit amet tortor. Fusce malesuada id nisi a ultrices. Quisque sed placerat quam, placerat iaculis sapien. Nullam nec facilisis risus. Aenean venenatis nulla quis ipsum tempus, vel convallis nisl pharetra. Quisque placerat erat eget libero lobortis, sed sodales orci fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin cursus vestibulum nisi. Pellentesque semper lacus at sapien vestibulum, tincidunt lobortis sem efficitur." Grid.Row="1" TextWrapping="Wrap"/>
+                <TextBlock x:Name="PlotTitle" Text="PLOT" Margin="10,10,10,10" FontSize="24" Width="Auto" Height="40" Grid.Row="0" FontWeight="Bold" />
+                <TextBlock x:Name="Plot" Margin="10,0,0,-80" FontSize="18" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor ante, ultrices feugiat iaculis ut, auctor sit amet tortor. Fusce malesuada id nisi a ultrices. Quisque sed placerat quam, placerat iaculis sapien. Nullam nec facilisis risus. Aenean venenatis nulla quis ipsum tempus, vel convallis nisl pharetra. Quisque placerat erat eget libero lobortis, sed sodales orci fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin cursus vestibulum nisi. Pellentesque semper lacus at sapien vestibulum, tincidunt lobortis sem efficitur." Grid.Row="1" TextWrapping="Wrap"/>
             </Grid>
-            <Image Grid.Column="2" Grid.Row="1" Grid.RowSpan="2" Source="/ElderlyNetflix;component/Assets/Images/imagesQVQDDBR3.jpg"/>
+            <Image Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Source="/ElderlyNetflix;component/Assets/Images/imagesQVQDDBR3.jpg"/>
             <Grid Grid.Column="1" Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="255"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Save" Grid.Column="0" HorizontalAlignment="Left" Width="246" Margin="295,0,-285,0" FontSize="36"/>
-                <Button Content="Play" Grid.Column="0" HorizontalAlignment="Left" Width="246" FontSize="36" Background="#FFDDDDDD" Click="Button_Click" />
+                <Button Content="" Grid.Column="0" HorizontalAlignment="Left" Width="137" Margin="172,0,-53,10" FontSize="36">
+                    <Button.OpacityMask>
+                        <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/saved.png" Stretch="Uniform"/>
+                    </Button.OpacityMask>
+                    <Button.Foreground>
+                        <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/saved.png" Stretch="Uniform"/>
+                    </Button.Foreground>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/saved.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button Content="" Grid.Column="0" HorizontalAlignment="Left" Width="144" FontSize="36" Click="Button_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ElderlyNetflix;component/arrow.png" Stretch="Uniform"/>
+                    </Button.Background>
+                    <Button.Foreground>
+                        <ImageBrush ImageSource="/ElderlyNetflix;component/arrow.png" Stretch="Uniform"/>
+                    </Button.Foreground>
+                    <Button.OpacityMask>
+                        <ImageBrush ImageSource="../Assets/Images/arrow.png" Stretch="Uniform"/>
+                    </Button.OpacityMask>
+                </Button>
             </Grid>
         </Grid>
     </StackPanel>
