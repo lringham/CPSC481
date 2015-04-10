@@ -54,7 +54,7 @@ namespace ElderlyNetflix.Screens
 
         private void scrubberBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            playbackText.Text = scrubberBar.Value.ToString();
+            playbackText.Text = ((int)((scrubberBar.Value / 10.0) * 100)).ToString() + "%";
         }
     }
 }

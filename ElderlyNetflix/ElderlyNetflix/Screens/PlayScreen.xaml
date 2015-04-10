@@ -32,6 +32,6 @@
         <Slider x:Name="scrubberBar" HorizontalAlignment="Left" Margin="49,35.612,0,0" VerticalAlignment="Top" Height="39" Width="1172" Grid.Row="1" ValueChanged="scrubberBar_ValueChanged"/>
         <CheckBox x:Name="subtitleCheckbox" Content="  Subtitles" HorizontalAlignment="Left" Margin="1042,49,0,0" VerticalAlignment="Top" Grid.Row="1" Background="White" Foreground="White" FontSize="35" Width="179" VerticalContentAlignment="Center" Padding="-1,-1,-5,0" MinHeight="2"/>
         <Button x:Name="playButton" Content="►" HorizontalAlignment="Left" Margin="609,49,0,-3" VerticalAlignment="Top" Width="75" Grid.Row="1" FontSize="48" FontFamily="Aharoni" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
-        <TextBlock x:Name="playbackText" HorizontalAlignment="Left" Margin="50,61,0,0" Grid.Row="1" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
+        <TextBlock x:Name="playbackText" HorizontalAlignment="Left" Margin="50,61,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0%" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
     </Grid>
 </UserControl>
