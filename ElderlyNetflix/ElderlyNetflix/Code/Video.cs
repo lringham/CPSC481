@@ -27,6 +27,16 @@ namespace ElderlyNetflix.Code
                 this.actors = actors;
         }
 
+        public String getName()
+        {
+            return name;
+        }
+
+        public String getGenre()
+        {
+            return genre;
+        }
+
         public String toStringPretty()
         {
             String info =  
