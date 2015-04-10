@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280" Background="White">
     <Grid Width="1280" Height="720" Margin="0,0,0,0">
-        <Image Margin="0,0,0,0" Source="/ElderlyNetflix;component/Assets/Images/imagesLKEPHTJG.jpg" Opacity="0.5" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+        <Image Source="/ElderlyNetflix;component/Assets/Images/background.jpg" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Margin="-1,0,0,0">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -16,42 +16,19 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Grid HorizontalAlignment="Center" Height="431" Margin="562,94,215,0" Width="503" Background="Red" Opacity="100" VerticalAlignment="Top">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="217*"/>
-                <RowDefinition Height="214*"/>
-            </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" Height="556" Margin="0,83,0,0" Width="1280" Background="#B27E7E7E" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="173*"/>
-                <ColumnDefinition Width="226*"/>
+                <ColumnDefinition Width="639*"/>
+                <ColumnDefinition Width="641*"/>
             </Grid.ColumnDefinitions>
-            <TextBox HorizontalAlignment="Left" Height="37" Margin="201,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.ColumnSpan="2"/>
-            <TextBox HorizontalAlignment="Left" Height="31" Margin="201,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Grid.ColumnSpan="2"/>
-            <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="115,85,0,60" Width="93" Background="White" Grid.Column="1" Click="Login_Click" FontSize="25" Grid.Row="1"/>
-            <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="15" Margin="92,29,0,0" VerticalAlignment="Top" Width="16" RenderTransformOrigin="-1.812,0.333" FontSize="20" Grid.Row="1"/>
-            <Label Content="Remember My Username and password" HorizontalAlignment="Right" Height="42" Margin="0,24,10,0" VerticalAlignment="Top" Width="366" Padding="5,5,0,5" Grid.Row="1" FontSize="20" Grid.ColumnSpan="2" />
-            <TextBlock HorizontalAlignment="Left" Height="37" Margin="25,112,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="131" FontSize="25"/>
-            <TextBlock HorizontalAlignment="Left" Height="53" Margin="25,176,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="146" FontSize="25" Grid.RowSpan="2"/>
+            <TextBox HorizontalAlignment="Left" Height="37" Margin="588,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" VerticalContentAlignment="Center" FontSize="16" Grid.ColumnSpan="2"/>
+            <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="500,431,0,66" Width="278" Background="White" Click="Login_Click" FontSize="25" Grid.ColumnSpan="2"/>
+            <CheckBox Content="Remember Me" HorizontalAlignment="Left" Height="43" Margin="588,328,0,0" VerticalAlignment="Top" Width="256" RenderTransformOrigin="0.486,0.507" FontSize="36" VerticalContentAlignment="Center" Foreground="Black" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" Height="37" Margin="437,153,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="131" FontSize="25" Foreground="Black"/>
+            <TextBlock HorizontalAlignment="Left" Height="37" Margin="437,254,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="146" FontSize="25" Foreground="Black"/>
+            <Image HorizontalAlignment="Left" Height="200" Margin="437,-74,0,0" VerticalAlignment="Top" Source="/ElderlyNetflix;component/Assets/Images/logo.png" Width="400" Grid.ColumnSpan="2"/>
+            <PasswordBox HorizontalAlignment="Left" Margin="588,254,0,0" VerticalAlignment="Top" Height="43
+                         " Width="255" Grid.ColumnSpan="2" VerticalContentAlignment="Center" FontSize="16"/>
         </Grid>
-        <Grid Height="100" Margin="0,0,0,0" VerticalAlignment="Bottom">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7A0000"/>
-                    <GradientStop Color="Black" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="25*"/>
-                <ColumnDefinition Width="108*"/>
-                <ColumnDefinition Width="25*"/>
-            </Grid.ColumnDefinitions>
-            <!--<Button Grid.Column="1" Height="70" Margin="0" Width="177" Click="Home_Click" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button.Background>
-                    <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/logo.png" Stretch="Uniform"/>
-                </Button.Background>
-            </Button>-->
-        </Grid>
-        <Image Margin="90,70,963,492" Source="/ElderlyNetflix;component/Assets/Images/imagesDCX1E6O5.jpg" Stretch="Fill"/>
     </Grid>
 </UserControl>

@@ -35,5 +35,5 @@ namespace ElderlyNetflix.Screens
         {
             Navigator.navigate(new ProfileScreen());
         }
-    }
+    } 
 }
