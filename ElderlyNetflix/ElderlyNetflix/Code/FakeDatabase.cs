@@ -12,6 +12,7 @@ namespace ElderlyNetflix.Code
         private static List<Video> favoriteVideos = new List<Video>();
         private static List<Video> recentVideos = new List<Video>();
         private static List<Video> searchedVideos = new List<Video>();
+        private static List<Video> browseVideos = new List<Video>();
 
         public static void initalize()
         {
@@ -42,6 +43,20 @@ namespace ElderlyNetflix.Code
                searchedVideos.Add(video);
                videos.Add(video);
             }            
+
+            int j = 0;
+            for (int i = 0; i < 50; i++)
+            {
+                String[] genres = {"Action", "Comedy", "Drama", "Horror", "Thriller"};
+                
+                if (i != 0 && i % 10 == 0)
+                    j++;
+      
+                video = new Video("Movie " + (i + 1), genres[j], "Cory Hutchison", "1986");
+
+                browseVideos.Add(video);
+                videos.Add(video);
+            }
         }
 
         public static List<Video> getFavoriteVideos()
@@ -57,6 +72,11 @@ namespace ElderlyNetflix.Code
         public static List<Video> getSearchedVideos()
         {
             return searchedVideos;
+        }
+
+        public static List<Video> getBrowseVideos()
+        {
+            return browseVideos;
         }
 
         public static List<Video> getSuggestedVideos(String suggestion)

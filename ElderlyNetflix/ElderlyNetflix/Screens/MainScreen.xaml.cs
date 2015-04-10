@@ -50,8 +50,10 @@ namespace ElderlyNetflix.Screens
 
         private void Browse_Click(object sender, RoutedEventArgs e)
         {
-            browse = new BrowseScreen();
-            Navigator.navigate(browse);
+            movieList = new MovieListScreen();
+            Navigator.navigate(movieList, "Browse Movies", FakeDatabase.getBrowseVideos());
+//            browse = new BrowseScreen();
+//            Navigator.navigate(browse);
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)
