@@ -12,7 +12,6 @@ namespace ElderlyNetflix.Code
         private static List<Video> favoriteVideos = new List<Video>();
         private static List<Video> recentVideos = new List<Video>();
         private static List<Video> searchedVideos = new List<Video>();
-        private static List<Video> browseVideos = new List<Video>();
 
         public static void initalize()
         {
@@ -79,19 +78,113 @@ namespace ElderlyNetflix.Code
             videos.Add(video);
             favoriteVideos.Add(video);
 
-            int j = 0;
-            for (int i = 0; i < 50; i++)
-            {
-                String[] genres = {"Action", "Comedy", "Drama", "Horror", "Thriller"};
-                
-                if (i != 0 && i % 10 == 0)
-                    j++;
-      
-                video = new Video("Movie " + (i + 1), genres[j], "Cory Hutchison", "1986");
+            video = new Video
+                ("Daredevil",
+                "Action",
+                "Drew Goddard",
+                "2015",
+                "A blind lawyer with his other senses superhumanly enhanced fights crime as a costumed superhero.",
+                new String[] { "Charlie Cox", "Deborah Ann Woll", "Elden Henson" });
+            videos.Add(video);
 
-                browseVideos.Add(video);
-                videos.Add(video);
-            }
+            video = new Video
+                ("Whiplash",
+                "Drama",
+                "Damien Chazelle",
+                "2014",
+                "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.",
+                new String[] { "Miles Teller", "J.K. Simmons", "Melissa Benoist" });
+            videos.Add(video);
+
+            video = new Video
+                ("The Matrix",
+                "Action",
+                "Andy Wachowski & Lana Wachowski",
+                "1999",
+                "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+                new String[] { "Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss" });
+            videos.Add(video);
+
+            video = new Video
+                ("John Wick",
+                "Action",
+                "Chad Stahelski & David Leitch",
+                "2014",
+                "An ex-hitman comes out of retirement to track down the gangsters that took everything from him.",
+                new String[] { "Keanu Reeves", "Michael Nyqvist", "Alfie Allen" });
+            videos.Add(video);
+
+            video = new Video
+                ("The Thing", 
+                "Horror",
+                "John Carpenter",
+                "1982",
+                "Scientists in the Antarctic are confronted by a shape-shifting alien that assumes the appearance of the people that it kills.",
+                new String[] { "Kurt Russell", "Wilford Brimley", "Keith David" });
+            videos.Add(video);
+
+            video = new Video
+                ("Citizenfour",
+                "Documentary",
+                "Laura Poitras",
+                "2015",
+                "A documentarian and a reporter travel to Hong Kong for the first of many meetings with Edward Snowden.",
+                new String[] { "Edward Snowden", "Glenn Greenwald", "William Binney" });
+            videos.Add(video);
+
+            video = new Video
+                ("2001: A Space Odyssey",
+                "Sci-Fi",
+                "Stanley Kubrick",
+                "1968",
+                "Humanity finds a mysterious, obviously artificial, object buried beneath the Lunar surface and, with the intelligent computer H.A.L. 9000, sets off on a quest.",
+                new String[] { "Keir Dullea", "Gary Lockwood", "William Sylvester" });
+            videos.Add(video);
+
+            video = new Video
+                ("Blade Runner",
+                "Sci-Fi",
+                "Ridley Scott",
+                "1982",
+                "A blade runner must pursue and try to terminate four replicants who stole a ship in space and have returned to Earth to find their creator.",
+                new String[] { "Harrison Ford", "Rutger Hauer", "Sean Young" });
+            videos.Add(video);
+
+            video = new Video
+                ("Good Will Hunting",
+                "Drama",
+                "Gus Van Sant",
+                "1997",
+                "Will Hunting, a janitor at M.I.T., has a gift for mathematics, but needs help from a psychologist to find direction in his life.",
+                new String[] { "Robin Williams", "Matt Damon", "Ben Afflect" });
+            videos.Add(video);
+
+            video = new Video
+                ("Interstellar",
+                "Sci-Fi",
+                "Christopher Nolan",
+                "2014",
+                "A team of explorers travel through a wormhole in an attempt to ensure humanity's survival.",
+                new String[] { "Matthew McConaughey", "Anne Hathaway", "Jessica Chastain" });
+            videos.Add(video);
+
+            video = new Video
+                ("True Detective",
+                "Drama",
+                "Nic Pizzolatto",
+                "2014",
+                "An anthology police detective series in which investigations seem to unearth both personal and professional secrets of those involved, both within or outside the law.",
+                new String[] { "Matthew McConaughey", "Woody Harrelson", "Michelle Monaghan" });
+            videos.Add(video);
+
+            video = new Video
+                ("Breaking Bad",
+                "Drama",
+                "Vince Gilligan",
+                "2008",
+                "A chemistry teacher diagnosed with a terminal lung cancer, teams up with his former student, Jesse Pinkman, to cook and sell crystal meth.",
+                new String[] { "Bryan Cranston", "Aaron Paul", "Anna Gunn" });
+            videos.Add(video);
         }
 
         public static List<Video> getFavoriteVideos()
@@ -109,9 +202,9 @@ namespace ElderlyNetflix.Code
             return searchedVideos;
         }
 
-        public static List<Video> getBrowseVideos()
+        public static List<Video> getVideos()
         {
-            return browseVideos;
+            return videos;
         }
 
         public static List<Video> getSuggestedVideos(String suggestion)

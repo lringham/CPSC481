@@ -203,6 +203,19 @@
     <Content Include="Assets\Images\arrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Assets\Images\MovieCovers\breakingbad.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\bladerunner.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\citizenfour.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\daredevil.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\goodwillhunting.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\interstellar.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\johnwick.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\thematrix.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\thething.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\truedetective.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\whiplash.jpeg" />
+    <Resource Include="Assets\Images\MovieCovers\whiplash.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\2001aspace.jpg" />
     <Resource Include="Assets\Images\MovieCovers\arrow.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
