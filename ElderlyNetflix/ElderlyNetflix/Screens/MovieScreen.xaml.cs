@@ -65,7 +65,7 @@ namespace ElderlyNetflix.Screens
             Details.Text = video.details();
             Plot.Text = video.plot;
 
-            string imgName = video.name.Contains(':') ? video.name.Split(':')[0].ToLower() : video.name;
+            string imgName = video.name.Contains(' ') ? video.name.Split(' ')[0].ToLower() : video.name.Contains(',') ? video.name.Split(',')[0].ToLower() : video.name.Contains(':') ? video.name.Split(':')[0].ToLower() : video.name;
             CoverArt.Source = new BitmapImage(new Uri("/Assets/Images/MovieCovers/" + imgName + ".jpg", UriKind.Relative));
         }
     }
