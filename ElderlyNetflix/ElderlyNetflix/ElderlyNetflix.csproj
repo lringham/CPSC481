@@ -89,6 +89,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Screens\Notification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Screens\PlayScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -118,6 +122,9 @@
     </Compile>
     <Compile Include="Screens\MovieScreen.xaml.cs">
       <DependentUpon>MovieScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Notification.xaml.cs">
+      <DependentUpon>Notification.xaml</DependentUpon>
     </Compile>
     <Compile Include="Screens\PlayScreen.xaml.cs">
       <DependentUpon>PlayScreen.xaml</DependentUpon>
