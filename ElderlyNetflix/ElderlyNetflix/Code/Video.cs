@@ -31,8 +31,16 @@ namespace ElderlyNetflix.Code
 
             this.plot = plot;
 
-            string imgName = name.Contains(':') ? name.Split(':')[0].ToLower() : name;
-            image = new BitmapImage(new Uri("/Assets/Images/MovieCovers/" + imgName + ".jpg", UriKind.Relative));
+
+            image = new BitmapImage(new Uri(this.getImagePath(), UriKind.Relative));
+        }
+
+        public String getImagePath()
+        {
+            char[] delim = { ' ', ',', ':' };
+            string[] imgName = name.ToLower().Split(delim);
+
+            return "/Assets/Images/MovieCovers/" + imgName[0] + ".jpg";
         }
 
         public String getName()
