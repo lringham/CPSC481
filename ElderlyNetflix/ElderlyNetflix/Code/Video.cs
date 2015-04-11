@@ -10,14 +10,16 @@ namespace ElderlyNetflix.Code
     class Video
     {
         /*
-         * Video:
-         *      name
-         *      genre
-         *      director
-         *      list of actors
-         *      year
-         *      plot
-         *      cover image
+         * Video Schema:
+         *      name            String
+         *      genre           String
+         *      director        String
+         *      list of actors  String[]
+         *      year            String
+         *      plot            String
+         *      cover image     BitmapImage
+         *      isFavorite      bool
+         *      isRecent        bool
          */
         public String name;
         public String genre;
@@ -26,6 +28,8 @@ namespace ElderlyNetflix.Code
         public String year;
         public String plot;
         public BitmapImage image;
+        private bool isFavorite;
+        private bool isRecent;
 
         /*
          * Constructor
@@ -43,9 +47,11 @@ namespace ElderlyNetflix.Code
                 this.actors = actors;
 
             this.plot = plot;
-
-
+            
             image = new BitmapImage(new Uri(this.getImagePath(), UriKind.Relative));
+
+            isFavorite = false;
+            isRecent = false;
         }
 
         /*
@@ -146,6 +152,48 @@ namespace ElderlyNetflix.Code
             }
 
             return info;
-        }        
+        }
+
+        /*
+         * Toggles whether or not video is included in the Favorite(s) list.
+         */
+        public void toggleFavorite()
+        {
+            if (isFavorite == true)
+                isFavorite = false;
+            else
+                isFavorite = true;
+        }
+
+        /*
+         * Toggles whether or not video is recently watched.
+         */
+        public void toggleRecent()
+        {
+            if (isRecent == true)
+                isRecent = false;
+            else
+                isRecent = true;
+        }
+
+        /*
+         * Returns whether the current movie has been recently watched.
+         * Returns:     True - Is has been recently watched.
+         *              False - Is has NOT been recently watched.
+         */
+        public bool getRecentStatus()
+        {
+            return isRecent;
+        }
+
+        /*
+         * Returns whether the current movie is on the User's favorites list.
+         * Returns:     True - Is a favorite.
+         *              False - Otherwise.
+         */
+        public bool getFavoriteStatus()
+        {
+            return isFavorite;
+        }
     }
 }
