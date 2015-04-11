@@ -23,7 +23,8 @@ namespace ElderlyNetflix.Code
         private static List<Video> scifiVideos = new List<Video>();         // List of all Sci-Fi videos
 
         /*
-         * Initializer function that adds selected video to the pseudo-database
+         * Initializer function that adds contained videos to the pseudo-database.
+         * NOTE: All information contained within obtained from IMDb or OMDb.
          */
         public static void initalize()
         {
@@ -293,7 +294,7 @@ namespace ElderlyNetflix.Code
         }
 
         /*
-         * 
+         * TODO(lringham): Update comments and description.
          */
         public static List<Video> getSuggestedVideos(String suggestion)
         {
@@ -304,6 +305,20 @@ namespace ElderlyNetflix.Code
                     suggestions.Add(video);
                 
             return suggestions;   
+        }
+
+        /*
+         * Cycles through all movies in the database and updates they're recent/favorite status accordingly.
+         */
+        public static void update()
+        {
+            foreach (Video v in videos)
+            {
+                if (v.getRecentStatus())
+                    recentVideos.Add(v);
+                if (v.getFavoriteStatus())
+                    favoriteVideos.Add(v);
+            }
         }
     }
 }

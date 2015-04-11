@@ -45,6 +45,8 @@ namespace ElderlyNetflix.Screens
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            video.toggleRecent();
+            FakeDatabase.update();
             Navigator.navigate(new PlayScreen()); 
         }
 
@@ -66,6 +68,13 @@ namespace ElderlyNetflix.Screens
             Plot.Text = video.plot;
 
             CoverArt.Source = new BitmapImage(new Uri(video.getImagePath(), UriKind.Relative));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            video.toggleFavorite();
+            FakeDatabase.update();
+            // Notify that it has been added to favorites.
         }
     }
 }
