@@ -37,6 +37,7 @@ namespace ElderlyNetflix.Code
                 "A cryptic message from Bond's past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.",
                 new String[] {"Daniel Craig", "Christoph Waltz", "Ralph Fiennes"});
             videos.Add(video);
+            video.toggleFavorite();
 
             video = new Video
                ("Cinderella",
@@ -55,6 +56,7 @@ namespace ElderlyNetflix.Code
                 "Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.",
                 new String[] { "Stephen Amell", "Katie Cassidy", "David Ramsey" });
             videos.Add(video);
+            video.toggleFavorite();
 
             video = new Video
                 ("Avengers: Age of Ultron",
@@ -64,6 +66,9 @@ namespace ElderlyNetflix.Code
                 "When Tony Stark tries to jumpstart a dormant peacekeeping program, things go awry and it is up to the Avengers to stop the villainous Ultron from enacting his terrible plans.",
                 new String[] { "Robert Downey Jr.", "Chris Evans", "Mark Ruffalo" });
             videos.Add(video);
+            video.toggleFavorite();
+            video.toggleRecent();
+
 
             video = new Video
                 ("Kingsman: The Secret Service",
@@ -91,6 +96,7 @@ namespace ElderlyNetflix.Code
                 "A blind lawyer with his other senses superhumanly enhanced fights crime as a costumed superhero.",
                 new String[] { "Charlie Cox", "Deborah Ann Woll", "Elden Henson" });
             videos.Add(video);
+            video.toggleFavorite();
 
             video = new Video
                 ("Whiplash",
@@ -199,6 +205,8 @@ namespace ElderlyNetflix.Code
                 "The commercial vessel Nostromo receives a distress call from an unexplored planet. After searching for survivors, the crew heads home only to realize that a deadly bioform has joined them.",
                 new String[] { "Sigourney Weaver", "Tom Skerritt", "John Hurt" });
             videos.Add(video);
+
+            update();
         }
 
         /*

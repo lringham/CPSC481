@@ -10,14 +10,16 @@ namespace ElderlyNetflix.Code
     class Video
     {
         /*
-         * Video:
-         *      name
-         *      genre
-         *      director
-         *      list of actors
-         *      year
-         *      plot
-         *      cover image
+         * Video Schema:
+         *      name            String
+         *      genre           String
+         *      director        String
+         *      list of actors  String[]
+         *      year            String
+         *      plot            String
+         *      cover image     BitmapImage
+         *      isFavorite      bool
+         *      isRecent        bool
          */
         public String name;
         public String genre;

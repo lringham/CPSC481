@@ -38,19 +38,19 @@ namespace ElderlyNetflix.Screens
         private void Recent_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
-            Navigator.navigate(movieList, "Recently Watched Movies", FakeDatabase.getRecentVideos());
+            Navigator.navigate(movieList, "RECENTLY WATCHED MOVIES", FakeDatabase.getRecentVideos());
         }
 
         private void Saved_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
-            Navigator.navigate(movieList, "Favorite Movies", FakeDatabase.getFavoriteVideos());
+            Navigator.navigate(movieList, "FAVORITE MOVIES", FakeDatabase.getFavoriteVideos());
         }
 
         private void Browse_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
-            Navigator.navigate(movieList, "Browse Movies", FakeDatabase.getVideos());
+            Navigator.navigate(movieList, "BROWSE MOVIES", FakeDatabase.getVideos());
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)

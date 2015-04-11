@@ -192,11 +192,13 @@ namespace ElderlyNetflix.Screens
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
+            FakeDatabase.update();
             Navigator.navigateAndClearStack(new MainScreen());
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            FakeDatabase.update();
             Navigator.navigateBack();
         }
 
