@@ -203,19 +203,19 @@
     <Content Include="Assets\Images\arrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Assets\Images\MovieCovers\breakingbad.jpg" />
-    <Resource Include="Assets\Images\MovieCovers\bladerunner.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\true.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\thing.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\matrix.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\john.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\good.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\breaking.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\blade.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\2001.jpg" />
+    <Resource Include="Assets\Images\MovieCovers\alien.jpg" />
     <Resource Include="Assets\Images\MovieCovers\citizenfour.jpg" />
     <Resource Include="Assets\Images\MovieCovers\daredevil.jpg" />
-    <Resource Include="Assets\Images\MovieCovers\goodwillhunting.jpg" />
     <Resource Include="Assets\Images\MovieCovers\interstellar.jpg" />
-    <Resource Include="Assets\Images\MovieCovers\johnwick.jpg" />
-    <Resource Include="Assets\Images\MovieCovers\thematrix.jpg" />
-    <Resource Include="Assets\Images\MovieCovers\thething.jpg" />
-    <Resource Include="Assets\Images\MovieCovers\truedetective.jpg" />
-    <Resource Include="Assets\Images\MovieCovers\whiplash.jpeg" />
     <Resource Include="Assets\Images\MovieCovers\whiplash.jpg" />
-    <Resource Include="Assets\Images\MovieCovers\2001aspace.jpg" />
     <Resource Include="Assets\Images\MovieCovers\arrow.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

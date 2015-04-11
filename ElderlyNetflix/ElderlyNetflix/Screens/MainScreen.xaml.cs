@@ -21,7 +21,6 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class MainScreen : UserControl
     {
-        private static BrowseScreen browse;
         private static MovieListScreen movieList;
         private static SearchScreen search;
 

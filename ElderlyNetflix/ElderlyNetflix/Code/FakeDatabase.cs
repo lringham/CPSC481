@@ -97,7 +97,7 @@ namespace ElderlyNetflix.Code
             videos.Add(video);
 
             video = new Video
-                ("The Matrix",
+                ("Matrix, The",
                 "Action",
                 "Andy Wachowski & Lana Wachowski",
                 "1999",
@@ -115,7 +115,7 @@ namespace ElderlyNetflix.Code
             videos.Add(video);
 
             video = new Video
-                ("The Thing", 
+                ("Thing, The", 
                 "Horror",
                 "John Carpenter",
                 "1982",
@@ -184,6 +184,15 @@ namespace ElderlyNetflix.Code
                 "2008",
                 "A chemistry teacher diagnosed with a terminal lung cancer, teams up with his former student, Jesse Pinkman, to cook and sell crystal meth.",
                 new String[] { "Bryan Cranston", "Aaron Paul", "Anna Gunn" });
+            videos.Add(video);
+
+            video = new Video
+                ("Alien",
+                "Horror",
+                "Ridley Scott",
+                "1979",
+                "The commercial vessel Nostromo receives a distress call from an unexplored planet. After searching for survivors, the crew heads home only to realize that a deadly bioform has joined them.",
+                new String[] { "Sigourney Weaver", "Tom Skerritt", "John Hurt" });
             videos.Add(video);
         }
 
