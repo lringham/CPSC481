@@ -65,8 +65,10 @@ namespace ElderlyNetflix.Screens
             Details.Text = video.details();
             Plot.Text = video.plot;
 
-            string imgName = video.name.Contains(' ') ? video.name.Split(' ')[0].ToLower() : video.name.Contains(',') ? video.name.Split(',')[0].ToLower() : video.name.Contains(':') ? video.name.Split(':')[0].ToLower() : video.name;
-            CoverArt.Source = new BitmapImage(new Uri("/Assets/Images/MovieCovers/" + imgName + ".jpg", UriKind.Relative));
+            char[] delim = { ' ', ',', ':' };
+            string[] imgName = video.name.ToLower().Split(delim);
+            //System.Console.WriteLine(imgName[0]);
+            CoverArt.Source = new BitmapImage(new Uri("/Assets/Images/MovieCovers/" + imgName[0] + ".jpg", UriKind.Relative));
         }
     }
 }
