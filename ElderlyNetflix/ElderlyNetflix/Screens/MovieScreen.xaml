@@ -60,16 +60,16 @@
                 <RowDefinition Height="133" />
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="Title" Text="THE PIANIST" Margin="10,10,10,10" FontSize="36" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="1" FontWeight="Bold" />
+            <TextBlock x:Name="Title" Text="NAME" Margin="10,10,10,10" FontSize="36" Width="Auto" Height="Auto" Grid.Row="1" Grid.Column="1" FontWeight="Bold" />
             <Grid Width="Auto" Height="Auto" Grid.Column="1" Grid.Row="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="PlotTitle" Text="PLOT" Margin="10,10,10,10" FontSize="24" Width="Auto" Height="40" Grid.Row="0" FontWeight="Bold" />
+                <TextBlock x:Name="Details" Text="DETAILS" Margin="10,10,10,11" FontSize="24" Width="Auto" Height="40" Grid.Row="0"/>
                 <TextBlock x:Name="Plot" Margin="10,0,0,-80" FontSize="18" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tortor ante, ultrices feugiat iaculis ut, auctor sit amet tortor. Fusce malesuada id nisi a ultrices. Quisque sed placerat quam, placerat iaculis sapien. Nullam nec facilisis risus. Aenean venenatis nulla quis ipsum tempus, vel convallis nisl pharetra. Quisque placerat erat eget libero lobortis, sed sodales orci fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin cursus vestibulum nisi. Pellentesque semper lacus at sapien vestibulum, tincidunt lobortis sem efficitur." Grid.Row="1" TextWrapping="Wrap"/>
             </Grid>
-            <Image Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Source="/ElderlyNetflix;component/Assets/Images/imagesQVQDDBR3.jpg"/>
+            <Image x:Name="CoverArt" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Source="/ElderlyNetflix;component/Assets/Images/imagesQVQDDBR3.jpg"/>
             <Grid Grid.Column="1" Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="255"/>

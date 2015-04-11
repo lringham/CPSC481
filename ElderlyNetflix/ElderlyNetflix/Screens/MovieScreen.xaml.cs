@@ -21,6 +21,7 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class MovieScreen : UserControl, INavigable
     {
+        Video video;
         public MovieScreen()
         {
             InitializeComponent();
@@ -59,8 +60,13 @@ namespace ElderlyNetflix.Screens
 
         public void useState(params object[] state)
         {
-            Video video = (Video)state[0];
+            video = (Video)state[0];
+            Title.Text = video.name;
+            Details.Text = video.details();
+            Plot.Text = video.plot;
 
+            string imgName = video.name.Contains(':') ? video.name.Split(':')[0].ToLower() : video.name;
+            CoverArt.Source = new BitmapImage(new Uri("/Assets/Images/MovieCovers/" + imgName + ".jpg", UriKind.Relative));
         }
     }
 }

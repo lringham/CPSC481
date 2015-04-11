@@ -44,7 +44,7 @@
             <Label Content="Search for a Video!" FontSize="24" HorizontalAlignment="Center" Margin="196,10,197,-10" Grid.RowSpan="4" Grid.Column="1" Width="212"/>
             <Button Content="Search" Width = "122" HorizontalAlignment="Right" Grid.Column="2" Grid.Row="1" Margin="0,22,2,243" Click="Button_Click"/>
             <TextBox x:Name="SearchBar" TextWrapping="Wrap" Text="Search for Name, Director, Year or Actor" Margin="0,22,0,243" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" GotFocus="SearchBar_GotFocus" LostFocus="SearchBar_LostFocus" KeyDown="SearchBar_KeyDown" KeyUp="SearchBar_KeyUp"/>
-            <StackPanel x:Name="suggestionsBox" Grid.Column="1" HorizontalAlignment="Left" Height="385" Margin="0,54,0,0" Grid.Row="1" VerticalAlignment="Top" Width="605" Background="White" Grid.RowSpan="3"/>
+            <StackPanel x:Name="suggestionsBox" Grid.Column="1" HorizontalAlignment="Left" Height="343" Margin="0,54,0,0" Grid.Row="1" VerticalAlignment="Top" Width="605" Background="White" Grid.RowSpan="3"/>
         </Grid>
     </StackPanel>
 </UserControl>

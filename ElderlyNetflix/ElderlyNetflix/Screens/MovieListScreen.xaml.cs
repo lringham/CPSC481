@@ -102,7 +102,7 @@ namespace ElderlyNetflix.Screens
             Image art = new Image();
             art.Margin = new Thickness(0, 0, 0, 5);
             art.Stretch = Stretch.Uniform;
-            art.Source = new BitmapImage(new Uri("/Assets/Images/icon.png", UriKind.Relative));
+            art.Source = video.image;
             art.Height = 100;
             art.Width = 100;            
             Grid.SetColumn(art, 1);
@@ -111,9 +111,9 @@ namespace ElderlyNetflix.Screens
 
             //title textblock
             TextBlock videoTitle = new TextBlock();
-            videoTitle.Text = video.name;
+            videoTitle.Text = video.name + " ("+video.year+")";
             videoTitle.Margin = new Thickness(0, 0, 0, 0);
-            videoTitle.Height = 30;
+            videoTitle.Height = 40;
             videoTitle.FontSize = 24;
             videoTitle.Foreground = new SolidColorBrush(Colors.Black);
             videoTitle.VerticalAlignment = VerticalAlignment.Top;
@@ -128,7 +128,7 @@ namespace ElderlyNetflix.Screens
             int fontSize = 18;
             TextBlock videoInfo = new TextBlock();
             videoInfo.Margin = new Thickness(0, 0, 0, 5);
-            videoInfo.Height = 80;
+            videoInfo.Height = 70;
             videoInfo.Text = video.toStringPretty();
             videoInfo.FontSize = fontSize;
             videoInfo.Foreground = new SolidColorBrush(Colors.Black);

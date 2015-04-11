@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace ElderlyNetflix.Code
 {
@@ -13,8 +14,10 @@ namespace ElderlyNetflix.Code
         public String director;
         public String[] actors;
         public String year;
+        public String plot;
+        public BitmapImage image;
 
-        public Video(String name, String genre = "", String director = "", String year = "", String[] actors = null)
+        public Video(String name, String genre = "", String director = "", String year = "", string plot = "", String[] actors = null)
         {
             this.name = name;
             this.genre = genre;
@@ -25,6 +28,11 @@ namespace ElderlyNetflix.Code
                 this.actors = new String[0];
             else
                 this.actors = actors;
+
+            this.plot = plot;
+
+            string imgName = name.Contains(':') ? name.Split(':')[0].ToLower() : name;
+            image = new BitmapImage(new Uri("/Assets/Images/MovieCovers/" + imgName + ".jpg", UriKind.Relative));
         }
 
         public String getName()
@@ -39,27 +47,17 @@ namespace ElderlyNetflix.Code
 
         public String toStringPretty()
         {
-            String info =  
-                (year           != "" ? " (" + year +")"    : "") + 
-                (genre+director != "" ? "\n"                : "") + 
-                (director       != "" ? director + ", "     : "") + 
-                (genre          != "" ? genre               : "");
-
-            char[] infoArray = info.ToCharArray();
-            if (infoArray.Length > 0 && infoArray[infoArray.Length - 1] == ',' && genre != ",")
-                return name + info.Substring(0, info.Length - 2);
-            else
-                return name + info;
+            String info = director + ", " + year + ", " + genre + "\n";
+            foreach(String actor in actors)
+                info += actor + ", ";
+            info = info.Remove(info.LastIndexOf(", "));
+            return info;
         }
 
         public String toStringSimple()
         {
-            String info =
-                (year != "" ? " (" + year + ")" : "") +
-                (director != "" ? ", " + director : "") +
-                (genre != "" ? ", " + genre : "");
-
-            return name + info;
+            String detail = details();
+            return name + (detail != "" ? " " + detail : "");
         }
 
         public bool contains(String search)
@@ -70,10 +68,38 @@ namespace ElderlyNetflix.Code
                 return result;
 
             foreach (String actor in actors)
-                if (actor.ToUpper().IndexOf(actor) > -1)
+                if (actor.ToUpper().IndexOf(search) > -1)
                     return true;
 
             return result;
         }
+
+        public String details()
+        {
+            bool hasYear = year != "";
+            bool hasDirector = director != "";
+            bool hasGenre = genre != "";
+
+            String info = "";
+
+            if (hasYear)
+                info = "(" + year + ")";
+
+            if (hasDirector)
+            {
+                if(hasYear)
+                    info += ", ";
+                info += director;
+            }
+
+            if(hasGenre)
+            {
+                if (hasYear || hasDirector)
+                    info += ", ";
+                info += genre;
+            }
+
+            return info;
+        }        
     }
 }

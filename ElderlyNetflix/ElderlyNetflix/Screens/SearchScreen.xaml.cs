@@ -59,7 +59,7 @@ namespace ElderlyNetflix.Screens
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (SearchBar.Text != "Search for Name, Director, Year or Actor" && SearchBar.Text != "")
-                Navigator.navigate(new MovieListScreen(), "Search Results for \""+SearchBar.Text+"\"", FakeDatabase.getSearchedVideos());
+                Navigator.navigate(new MovieListScreen(), "Search Results for \"" + SearchBar.Text + "\"", FakeDatabase.getSuggestedVideos(SearchBar.Text));
         }
 
         private void SearchBar_GotFocus(object sender, RoutedEventArgs e)
@@ -86,9 +86,12 @@ namespace ElderlyNetflix.Screens
             text.MouseEnter += new MouseEventHandler(mouseEnter);
             text.MouseLeave += new MouseEventHandler(mouseLeave);
 
-            suggestionsBox.Children.Add(text);
-            suggestionsBox.Height = suggestions.Count * text.Height;
-            suggestions.Add(text, video);
+            if (suggestions.Count <= 15)
+            {
+                suggestionsBox.Children.Add(text);
+                suggestionsBox.Height = suggestions.Count * text.Height;
+                suggestions.Add(text, video);
+            }
         }
 
         private void addSuggestions(List<Video> suggestions)
@@ -107,7 +110,7 @@ namespace ElderlyNetflix.Screens
         private void SearchBar_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Return)
-                Navigator.navigate(new MovieListScreen(), "Search Results for \"" + SearchBar.Text + "\"", FakeDatabase.getSearchedVideos());
+                Navigator.navigate(new MovieListScreen(), "Search Results for \"" + SearchBar.Text + "\"", FakeDatabase.getSuggestedVideos(SearchBar.Text));
         }
 
         private void SearchBar_KeyUp(object sender, KeyEventArgs e)
@@ -120,7 +123,7 @@ namespace ElderlyNetflix.Screens
         private void suggestionClicked(object sender, RoutedEventArgs e)
         {
             Video video = suggestions[(TextBlock)sender];
-            Navigator.navigate(new MovieScreen());
+            Navigator.navigate(new MovieScreen(), video);
         }
 
         private void mouseEnter(object sender, RoutedEventArgs e)
