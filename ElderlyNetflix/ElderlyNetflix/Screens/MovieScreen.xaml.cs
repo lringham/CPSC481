@@ -41,6 +41,18 @@ namespace ElderlyNetflix.Screens
             img.Width = 75;
             img.Source = new BitmapImage(new Uri("/Assets/Images/profile.png", UriKind.Relative));
             profileButton.Content = img;
+
+            img = new Image();
+            img.Height = 100;
+            img.Width = 100;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/favorite.png", UriKind.Relative));
+            favoriteButton.Content = img;
+
+            img = new Image();
+            img.Height = 75;
+            img.Width = 75;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/arrow.png", UriKind.Relative));
+            arrowButton.Content = img;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

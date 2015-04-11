@@ -33,6 +33,30 @@ namespace ElderlyNetflix.Screens
             img.Width = 75;
             img.Source = new BitmapImage(new Uri("/Assets/Images/profile.png", UriKind.Relative));
             profileButton.Content = img;
+
+            img = new Image();
+            img.Height = 300;
+            img.Width = 250;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/browse.png", UriKind.Relative));
+            Browse.Content = img;
+
+            img = new Image();
+            img.Height = 300;
+            img.Width = 250;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/search.png", UriKind.Relative));
+            Search.Content = img;
+
+            img = new Image();
+            img.Height = 300;
+            img.Width = 250;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/recent.png", UriKind.Relative));
+            Recent.Content = img;
+
+            img = new Image();
+            img.Height = 300;
+            img.Width = 250;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/favorite.png", UriKind.Relative));
+            Favorite.Content = img;
         }
 
         private void Recent_Click(object sender, RoutedEventArgs e)

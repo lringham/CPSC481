@@ -160,20 +160,13 @@
     <Resource Include="Assets\Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\MagnifyingGlass.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Assets\Videos\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\saved.png" />
     <Resource Include="Assets\Images\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Images\recommend.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\recent.png" />
@@ -182,10 +175,7 @@
     <Resource Include="Assets\Images\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\Images\imagesDCX1E6O5.jpg" />
-    <Resource Include="Assets\Images\imagesLKEPHTJG.jpg" />
     <Resource Include="Assets\Images\imagesQVQDDBR3.jpg" />
-    <Resource Include="Assets\Images\imagesT9FUD0D5.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\browse.png" />
@@ -197,12 +187,12 @@
     <Resource Include="Assets\Images\jg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Assets\Images\arrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Assets\Images\favorite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Images\MovieCovers\true.jpg" />
     <Resource Include="Assets\Images\MovieCovers\thing.jpg" />
     <Resource Include="Assets\Images\MovieCovers\matrix.jpg" />

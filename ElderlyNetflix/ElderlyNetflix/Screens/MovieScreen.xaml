@@ -74,29 +74,10 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="255"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="" Grid.Column="0" HorizontalAlignment="Left" Width="137" Margin="172,0,-53,10" FontSize="36">
-                    <Button.OpacityMask>
-                        <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/saved.png" Stretch="Uniform"/>
-                    </Button.OpacityMask>
-                    <Button.Foreground>
-                        <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/saved.png" Stretch="Uniform"/>
-                    </Button.Foreground>
-                    <Button.Background>
-                        <ImageBrush ImageSource="/ElderlyNetflix;component/Assets/Images/saved.png" Stretch="Uniform"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Grid.Column="0" HorizontalAlignment="Left" Width="144" FontSize="36" Click="Button_Click" >
-                    <Button.Background>
-                        <ImageBrush ImageSource="/ElderlyNetflix;component/arrow.png" Stretch="Uniform"/>
-                    </Button.Background>
-                    <Button.Foreground>
-                        <ImageBrush ImageSource="/ElderlyNetflix;component/arrow.png" Stretch="Uniform"/>
-                    </Button.Foreground>
-                    <Button.OpacityMask>
-                        <ImageBrush ImageSource="../Assets/Images/arrow.png" Stretch="Uniform"/>
-                    </Button.OpacityMask>
-                </Button>
+                <Button x:Name="favoriteButton" Content="" Grid.Column="0" HorizontalAlignment="Left" Width="137" Margin="0,0,0,-0.2" FontSize="36" OpacityMask="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}"/>
+                <Button x:Name="arrowButton" Content="" Grid.Column="0" HorizontalAlignment="Left" Width="144" FontSize="36" Click="Button_Click" OpacityMask="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Margin="407,0,-295,-0.2" />
             </Grid>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="459.2,94.4,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Play" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontSize="20"/>
         </Grid>
     </StackPanel>
 </UserControl>
