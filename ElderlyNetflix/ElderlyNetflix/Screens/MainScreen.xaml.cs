@@ -23,10 +23,13 @@ namespace ElderlyNetflix.Screens
     {
         private static MovieListScreen movieList;
         private static SearchScreen search;
+        private static Notification signOut;
 
         public MainScreen()
         {
             InitializeComponent();
+
+            signOut = new Notification();
 
             Image img = new Image();
             img.Height = 75;
@@ -92,5 +95,12 @@ namespace ElderlyNetflix.Screens
         {
             Navigator.navigateAndClearStack(new ProfileScreen());
         }
+
+        private void profileButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (signOut.canView)
+                signOut.Show();             
+        }
+
     }
 }

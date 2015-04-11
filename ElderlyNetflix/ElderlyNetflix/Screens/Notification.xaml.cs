@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ElderlyNetflix.Screens
 {
@@ -19,9 +20,32 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class Notification : Window
     {
+        public bool canView = true;
+
         public Notification()
         {
             InitializeComponent();
+
+            StartCloseTimer();
         }
+
+        
+        private void StartCloseTimer()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(3d);
+            timer.Tick += TimerTick;
+            timer.Start();
+        }
+
+        private void TimerTick(object sender, EventArgs e)
+        {
+            DispatcherTimer timer = (DispatcherTimer)sender;
+            timer.Stop();
+            timer.Tick -= TimerTick;
+            Close();
+            canView = false;
+        }
+        
     }
 }
