@@ -8,11 +8,23 @@ namespace ElderlyNetflix.Code
 {
     class FakeDatabase
     {
-        private static List<Video> videos = new List<Video>();
-        private static List<Video> favoriteVideos = new List<Video>();
-        private static List<Video> recentVideos = new List<Video>();
-        private static List<Video> searchedVideos = new List<Video>();
+        private static List<Video> videos = new List<Video>();              // Complete list of all videos
+        private static List<Video> favoriteVideos = new List<Video>();      // List of all user's favorited videos
+        private static List<Video> recentVideos = new List<Video>();        // List of all user's recent videos
+        private static List<Video> searchedVideos = new List<Video>();      // List of all search results
 
+        private static List<Video> actionVideos = new List<Video>();        // List of all Action videos
+        private static List<Video> comedyVideos = new List<Video>();        // List of all Comedy videos
+        private static List<Video> documentaryVideos = new List<Video>();   // List of all Documentary videos
+        private static List<Video> dramaVideos = new List<Video>();         // List of all Drama videos
+        private static List<Video> fantasyVideos = new List<Video>();       // List of all Fantasy videos
+        private static List<Video> horrorVideos = new List<Video>();        // List of all Horror videos
+        private static List<Video> mysteryVideos = new List<Video>();       // List of all Mystery videos
+        private static List<Video> scifiVideos = new List<Video>();         // List of all Sci-Fi videos
+
+        /*
+         * Initializer function that adds selected video to the pseudo-database
+         */
         public static void initalize()
         {
             Video video;
@@ -196,26 +208,93 @@ namespace ElderlyNetflix.Code
             videos.Add(video);
         }
 
+        /*
+         * Parses all movies from the videos list into seperate genre catagories.
+         */
+        public static void organizeVideos()
+        {
+            foreach (Video v in videos) 
+            {
+                if (v.genre.Contains("Action"))
+                    actionVideos.Add(v);
+                if (v.genre.Contains("Comedy"))
+                    comedyVideos.Add(v);
+                if (v.genre.Contains("Documentary"))
+                    documentaryVideos.Add(v);
+                if (v.genre.Contains("Drama"))
+                    dramaVideos.Add(v);
+                if (v.genre.Contains("Fantasy"))
+                    fantasyVideos.Add(v);
+                if (v.genre.Contains("Horror"))
+                    horrorVideos.Add(v);
+                if (v.genre.Contains("Mystery"))
+                    mysteryVideos.Add(v);
+                if (v.genre.Contains("Sci-Fi"))
+                    scifiVideos.Add(v);
+            }
+        }
+
+        /*
+         * Returns a list of the specified genre.
+         * Args:    String g - Requested Genre
+         * Returns: List of Videos from specified genre
+         */
+        public static List<Video> getVideosByGenre(string g)
+        {
+            if (g.ToLower().Contains("action"))
+                return actionVideos;
+            if (g.ToLower().Contains("comedy"))
+                return comedyVideos;
+            if (g.ToLower().Contains("documentary"))
+                return documentaryVideos;
+            if (g.ToLower().Contains("drama"))
+                return dramaVideos;
+            if (g.ToLower().Contains("fantasy"))
+                return fantasyVideos;
+            if (g.ToLower().Contains("horror"))
+                return horrorVideos;
+            if (g.ToLower().Contains("mystery"))
+                return mysteryVideos;
+            if (g.ToLower().Contains("sci"))
+                return scifiVideos;
+            return null;
+        }
+
+        /*
+         * Returns a list of the User's favorited videos.
+         */
         public static List<Video> getFavoriteVideos()
         {
             return favoriteVideos;
         }
 
+        /*
+         * Returns a list of the User's recently watched videos.
+         */
         public static List<Video> getRecentVideos()
         {
             return recentVideos;
         }
 
+        /*
+         * Returns a list of the User's requested search results.
+         */
         public static List<Video> getSearchedVideos()
         {
             return searchedVideos;
         }
 
+        /*
+         * Returns a complete list of all videos available in the database.
+         */
         public static List<Video> getVideos()
         {
             return videos;
         }
 
+        /*
+         * 
+         */
         public static List<Video> getSuggestedVideos(String suggestion)
         {
             List<Video> suggestions = new List<Video>();

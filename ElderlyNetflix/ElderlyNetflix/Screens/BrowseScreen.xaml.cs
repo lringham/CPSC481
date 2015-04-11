@@ -154,7 +154,6 @@ namespace ElderlyNetflix.Screens
 
         private void Info_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Handle going to Movie Info Page
             Navigator.navigate(new MovieScreen());
         }
     }
