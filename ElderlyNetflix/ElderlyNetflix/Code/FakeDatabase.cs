@@ -206,6 +206,24 @@ namespace ElderlyNetflix.Code
                 new String[] { "Sigourney Weaver", "Tom Skerritt", "John Hurt" });
             videos.Add(video);
 
+            video = new Video
+                ("Shining, The",
+                "Horror",
+                "Stanley Kubrick",
+                "1980",
+                "A family heads to an isolated hotel for the winter where an evil and spiritual presence influences the father into violence, while his psychic son sees horrific forebodings from the past and of the future.",
+                new String[] { "Jack Nicholson", "Shelley Duval", "Danny Lloyd" });
+            videos.Add(video);
+
+            video = new Video
+                ("Big Lebowski, The",
+                "Comedy",
+                "Joel Coen & Ethan Coen",
+                "1998",
+                "\"The Dude\" Lebowski, mistaken for a millionaire Lebowski, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.",
+                new String[] { "Jeff Bridges", "John Goodman", "Julianne Moore" });
+            videos.Add(video);
+
             update();
         }
 
