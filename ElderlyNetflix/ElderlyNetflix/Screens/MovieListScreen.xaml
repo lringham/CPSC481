@@ -32,6 +32,5 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" CanContentScroll="True">
             <StackPanel x:Name="ResultsStackPanel" Margin="0,0,0,100" VerticalAlignment="Top" Height="611"/>
         </ScrollViewer>
-        <Image Height="256" Margin="277,0,747,0" Source="/ElderlyNetflix;component/arrow.png" Stretch="Fill"/>
     </StackPanel>
 </UserControl>

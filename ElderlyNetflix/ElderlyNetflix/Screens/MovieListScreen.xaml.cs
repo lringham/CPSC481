@@ -142,8 +142,8 @@ namespace ElderlyNetflix.Screens
             //button
             Button videoButton = new Button();
             Image img = new Image();
-            img.Height = 100;
-            img.Source = new BitmapImage(new Uri("/Assets/Images/arrow.png", UriKind.Relative));
+            img.Height = 50;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/moreinfo.png", UriKind.Relative));
             videoButton.Content = img;
             Brush buttonBrush = new SolidColorBrush(Colors.White);
             buttonBrush.Opacity = 0;

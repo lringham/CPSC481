@@ -197,6 +197,7 @@
     <Content Include="Assets\Images\arrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Assets\Images\moreinfo.png" />
     <Resource Include="Assets\Images\MovieCovers\big.jpg" />
     <Resource Include="Assets\Images\MovieCovers\shining.jpg" />
     <Resource Include="Assets\Images\signin.png" />
