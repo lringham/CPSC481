@@ -47,12 +47,6 @@ namespace ElderlyNetflix.Screens
             profileButton.Content = img;
 
             img = new Image();
-            img.Height = 100;
-            img.Width = 100;
-            img.Source = new BitmapImage(new Uri("/Assets/Images/favorite.png", UriKind.Relative));
-            favoriteButton.Content = img;
-
-            img = new Image();
             img.Height = 75;
             img.Width = 75;
             img.Source = new BitmapImage(new Uri("/Assets/Images/arrow.png", UriKind.Relative));
@@ -91,10 +85,28 @@ namespace ElderlyNetflix.Screens
             CoverArt.Source = new BitmapImage(new Uri(video.getImagePath(), UriKind.Relative));
         }
 
+        private Image getFavoriteButton()
+        {
+            Image i = new Image();
+            i.Height = 100;
+            i.Width = 100;
+            if (video.getFavoriteStatus())
+            {
+                i.Source = new BitmapImage(new Uri("/Assets/Images/favorite_on.png", UriKind.Relative));
+            }
+            else
+            {
+                i.Source = new BitmapImage(new Uri("/Assets/Images/favorite.png", UriKind.Relative));
+            }
+
+            return i;
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             video.toggleFavorite();
             FakeDatabase.update();
+            favoriteButton.Content = getFavoriteButton();
 
             if (video.getFavoriteStatus())
             {
@@ -123,6 +135,11 @@ namespace ElderlyNetflix.Screens
             n = new Notification("Signed Out");
             n.Show();
             Navigator.navigate(new LoginScreen());
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            favoriteButton.Content = getFavoriteButton();
         }
     }
 }

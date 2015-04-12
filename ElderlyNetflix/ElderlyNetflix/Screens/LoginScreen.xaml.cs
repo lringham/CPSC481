@@ -47,7 +47,7 @@ namespace ElderlyNetflix.Screens
             }
             else
             {
-                n = new Notification("Incorrect username/password combination.");
+                n = new Notification("Incorrect Username or Password.");
                 n.Show();
             }
         }
