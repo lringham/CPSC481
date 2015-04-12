@@ -21,9 +21,6 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class LoginScreen : UserControl, INavigable
     {
-        private String username;
-        private String password;
-
         private static Notification n;
 
         public LoginScreen()
@@ -47,10 +44,9 @@ namespace ElderlyNetflix.Screens
             }
             else
             {
-                n = new Notification("Incorrect username or password.");
+                n = new Notification("Incorrect username/password combination.");
                 n.Show();
             }
-            
         }
 
         public void useState(params object[] state)

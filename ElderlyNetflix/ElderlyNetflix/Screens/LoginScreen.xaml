@@ -21,14 +21,13 @@
                 <ColumnDefinition Width="639*"/>
                 <ColumnDefinition Width="641*"/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="User" HorizontalAlignment="Left" Height="37" Margin="588,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" VerticalContentAlignment="Center" FontSize="16" Grid.ColumnSpan="2" />
-            <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="500,431,0,66" Width="278" Background="White" Click="Login_Click" FontSize="25" Grid.ColumnSpan="2"/>
-            <CheckBox Content="Remember Username" HorizontalAlignment="Left" Height="43" Margin="588,328,0,0" VerticalAlignment="Top" Width="256" RenderTransformOrigin="0.486,0.507" FontSize="24" VerticalContentAlignment="Center" Foreground="Black" Grid.ColumnSpan="2" Checked="CheckBox_Checked"/>
-            <TextBlock HorizontalAlignment="Left" Height="46" Margin="417,151,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="171" FontSize="36" Foreground="Black"/>
-            <TextBlock HorizontalAlignment="Left" Height="41" Margin="417,254,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="166" FontSize="36" Foreground="Black"/>
-            <Image HorizontalAlignment="Left" Height="200" Margin="437,-74,0,0" VerticalAlignment="Top" Source="/ElderlyNetflix;component/Assets/Images/logo.png" Width="400" Grid.ColumnSpan="2"/>
-            <PasswordBox x:Name="Pass" HorizontalAlignment="Left" Margin="588,254,0,0" VerticalAlignment="Top" Height="43
-                         " Width="255" Grid.ColumnSpan="2" VerticalContentAlignment="Center" FontSize="16"/>
+            <TextBox x:Name="User" HorizontalAlignment="Left" Height="40" Margin="603,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" VerticalContentAlignment="Center" FontSize="18" Grid.ColumnSpan="2" FontStretch="Expanded" FontWeight="SemiBold" MaxLines="1" />
+            <Button x:Name="Login" Content="Sign In" HorizontalAlignment="Center" Margin="0,417,0,80" Width="278" Background="White" Click="Login_Click" FontSize="32" Grid.ColumnSpan="2" FontWeight="Bold"/>
+            <CheckBox Content="Remember User Name" HorizontalAlignment="Left" Height="43" Margin="25,320,0,0" VerticalAlignment="Top" Width="189" RenderTransformOrigin="0.486,0.507" FontSize="16" VerticalContentAlignment="Center" Foreground="Black" Checked="CheckBox_Checked" Grid.Column="1" IsChecked="True"/>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="426,194,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="160" FontSize="36" Foreground="Black" IsHitTestVisible="False"/>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="426,264,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="160" FontSize="36" Foreground="Black" IsHitTestVisible="False"/>
+            <Image HorizontalAlignment="Center" Height="200" Margin="0,-18,0,0" VerticalAlignment="Top" Source="/ElderlyNetflix;component/Assets/Images/logo.png" Width="400" Grid.ColumnSpan="2"/>
+            <PasswordBox x:Name="Pass" HorizontalAlignment="Left" Margin="603,264,0,0" VerticalAlignment="Top" Height="40" Width="240" Grid.ColumnSpan="2" VerticalContentAlignment="Center" FontSize="18" FontStretch="Expanded" FontWeight="SemiBold"/>
         </Grid>
     </Grid>
 </UserControl>
