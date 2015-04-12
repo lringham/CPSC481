@@ -23,6 +23,9 @@ namespace ElderlyNetflix.Screens
     {
         private static Notification n;
 
+        private string username = "my-fake-email@email-provider.com";
+        private string password = "password";
+
         public LoginScreen()
         {
             InitializeComponent();
@@ -35,7 +38,7 @@ namespace ElderlyNetflix.Screens
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            if (User.Text == "test@test.com" && Pass.Password == "password")
+            if (User.Text == username && Pass.Password == password)
             {
                 n = new Notification("Login successful.");
                 n.Show();
@@ -64,7 +67,7 @@ namespace ElderlyNetflix.Screens
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            User.Text = "test@test.com";
+            User.Text = username;
         }
     } 
 }
