@@ -224,7 +224,12 @@ namespace ElderlyNetflix.Screens
         public void useState(params object[] state)
         {
             header.Text = (string)state[0];
-            displayedVideos.AddRange(videos.GetRange(0, videos.Count));
+            if (state.Length == 2)
+            {
+                videos = (List<Video>)state[1];
+                displayedVideos.AddRange(videos.GetRange(0, videos.Count));
+                displayVideos();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

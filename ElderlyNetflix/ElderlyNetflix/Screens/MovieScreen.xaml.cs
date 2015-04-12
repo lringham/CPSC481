@@ -20,8 +20,7 @@ namespace ElderlyNetflix.Screens
     /// Interaction logic for MovieScreen.xaml
     /// </summary>
     public partial class MovieScreen : UserControl, INavigable
-    {
-        
+    {        
         Video video;
 
         private static Notification n;
