@@ -19,7 +19,7 @@ namespace ElderlyNetflix.Screens
     /// <summary>
     /// Interaction logic for MainScreen.xaml
     /// </summary>
-    public partial class MainScreen : UserControl
+    public partial class MainScreen : UserControl, INavigable
     {
         private static MovieListScreen movieList;
         private static SearchScreen search;
@@ -65,19 +65,21 @@ namespace ElderlyNetflix.Screens
         private void Recent_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
-            Navigator.navigate(movieList, "RECENTLY WATCHED MOVIES", FakeDatabase.getRecentVideos());
+            Navigator.navigate(movieList, new MovieSource(FakeDatabase.getRecentVideos), "RECENTLY WATCHED MOVIES");
         }
 
         private void Saved_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
-            Navigator.navigate(movieList, "FAVORITE MOVIES", FakeDatabase.getFavoriteVideos());
+            Navigator.navigate(movieList, new MovieSource(FakeDatabase.getFavoriteVideos), "FAVORITE MOVIES");
+
         }
 
         private void Browse_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
-            Navigator.navigate(movieList, "BROWSE MOVIES", FakeDatabase.getVideos());
+            Navigator.navigate(movieList, new MovieSource(FakeDatabase.getVideos), "BROWSE MOVIES");
+
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)
@@ -102,5 +104,20 @@ namespace ElderlyNetflix.Screens
                 signOut.Show();             
         }
 
+
+        void INavigable.useState(params object[] state)
+        {
+
+        }
+
+        void INavigable.resume()
+        {
+
+        }
+
+        void INavigable.setSource(MovieSource source)
+        {
+   
+        }
     }
 }
