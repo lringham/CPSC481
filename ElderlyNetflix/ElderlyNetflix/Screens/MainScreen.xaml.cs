@@ -19,14 +19,17 @@ namespace ElderlyNetflix.Screens
     /// <summary>
     /// Interaction logic for MainScreen.xaml
     /// </summary>
-    public partial class MainScreen : UserControl, INavigable
+    public partial class MainScreen : UserControl
     {
         private static MovieListScreen movieList;
         private static SearchScreen search;
+        private static Notification signOut;
 
         public MainScreen()
         {
             InitializeComponent();
+
+            signOut = new Notification();
 
             Image img = new Image();
             img.Height = 75;
@@ -62,19 +65,19 @@ namespace ElderlyNetflix.Screens
         private void Recent_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
-            Navigator.navigate(movieList, new MovieSource(FakeDatabase.getRecentVideos), "RECENTLY WATCHED MOVIES");
+            Navigator.navigate(movieList, "RECENTLY WATCHED MOVIES", FakeDatabase.getRecentVideos());
         }
 
         private void Saved_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
-            Navigator.navigate(movieList, new MovieSource(FakeDatabase.getFavoriteVideos), "FAVORITE MOVIES");
+            Navigator.navigate(movieList, "FAVORITE MOVIES", FakeDatabase.getFavoriteVideos());
         }
 
         private void Browse_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
-            Navigator.navigate(movieList, new MovieSource(FakeDatabase.getVideos), "BROWSE MOVIES");
+            Navigator.navigate(movieList, "BROWSE MOVIES", FakeDatabase.getVideos());
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)
@@ -93,17 +96,11 @@ namespace ElderlyNetflix.Screens
             Navigator.navigateAndClearStack(new ProfileScreen());
         }
 
-        public void useState(params object[] state)
+        private void profileButton_MouseEnter(object sender, MouseEventArgs e)
         {
+            if (signOut.canView)
+                signOut.Show();             
         }
 
-        public void resume()
-        {
-        }
-
-        public void setSource(MovieSource source)
-        {
-            
-        }
     }
 }
