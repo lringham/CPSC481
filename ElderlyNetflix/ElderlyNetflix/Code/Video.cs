@@ -78,9 +78,7 @@ namespace ElderlyNetflix.Code
         public String toStringPretty()
         {
             String info = director + ", " + year + ", " + genre + "\n";
-            foreach(String actor in actors)
-                info += actor + ", ";
-            info = info.Remove(info.LastIndexOf(", "));
+            info += getActorsString();
             return info;
         }
 
@@ -194,6 +192,15 @@ namespace ElderlyNetflix.Code
         public bool getFavoriteStatus()
         {
             return isFavorite;
+        }
+
+        public string getActorsString()
+        {
+            string actorString = "";
+            foreach (String actor in actors)
+                actorString += actor + ", ";
+            actorString = actorString.Remove(actorString.LastIndexOf(", "));
+            return actorString;
         }
     }
 }

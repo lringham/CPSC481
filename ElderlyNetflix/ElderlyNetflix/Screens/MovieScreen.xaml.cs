@@ -78,8 +78,11 @@ namespace ElderlyNetflix.Screens
         {
             video = (Video)state[0];
             Title.Text = video.name;
-            Details.Text = video.details();
-            Plot.Text = video.plot;
+            Details.Text = "Year\t" + video.year;
+            Details.Text += "\nDirector\t" + video.director;
+            Details.Text += "\nGenre\t" + video.genre;
+            Details.Text += "\nActors\t" + video.getActorsString();
+            Details.Text += "\n\n" + video.plot;
 
             CoverArt.Source = new BitmapImage(new Uri(video.getImagePath(), UriKind.Relative));
         }
