@@ -19,7 +19,7 @@ namespace ElderlyNetflix.Screens
     /// <summary>
     /// Interaction logic for LoginScreen.xaml
     /// </summary>
-    public partial class LoginScreen : UserControl
+    public partial class LoginScreen : UserControl, INavigable
     {
         public LoginScreen()
         {
@@ -34,6 +34,19 @@ namespace ElderlyNetflix.Screens
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             Navigator.navigate(new ProfileScreen());
+        }
+
+        public void useState(params object[] state)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void resume()
+        {
+        }
+
+        public void setSource(MovieSource source)
+        {
         }
     } 
 }

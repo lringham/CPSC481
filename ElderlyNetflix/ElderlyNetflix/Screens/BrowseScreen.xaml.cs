@@ -19,7 +19,7 @@ namespace ElderlyNetflix.Screens
     /// <summary>
     /// Interaction logic for BrowseScreen.xaml
     /// </summary>
-    public partial class BrowseScreen : UserControl
+    public partial class BrowseScreen : UserControl, INavigable
     {
         private Dictionary<Video, Grid> videos = new Dictionary<Video, Grid>();
         private Dictionary<int, Video> filteredVideos = new Dictionary<int, Video>();
@@ -155,6 +155,19 @@ namespace ElderlyNetflix.Screens
         private void Info_Click(object sender, RoutedEventArgs e)
         {
             Navigator.navigate(new MovieScreen());
+        }
+
+        public void useState(params object[] state)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void resume()
+        {
+        }
+
+        public void setSource(MovieSource source)
+        {
         }
     }
 }

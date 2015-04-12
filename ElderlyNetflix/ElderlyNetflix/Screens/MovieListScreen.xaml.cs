@@ -26,6 +26,7 @@ namespace ElderlyNetflix.Screens
         List<Video> videos = new List<Video>();
         List<Video> displayedVideos = new List<Video>();
         Dictionary<Button, KeyValuePair<Video, Grid>> videoMap = new Dictionary<Button, KeyValuePair<Video, Grid>>();
+        MovieSource getMovies;
 
         public MovieListScreen()
         {
@@ -223,9 +224,7 @@ namespace ElderlyNetflix.Screens
         public void useState(params object[] state)
         {
             header.Text = (string)state[0];
-            videos = (List<Video>)state[1];
             displayedVideos.AddRange(videos.GetRange(0, videos.Count));
-            displayVideos();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -239,6 +238,29 @@ namespace ElderlyNetflix.Screens
         private void FilterTextBox_KeyUp(object sender, KeyEventArgs e)
         {
             filter(FilterTextBox.Text);
+        }
+
+        public void resume()
+        {
+            displayedVideos.Clear();
+            videos = getMovies();
+            
+            if (FilterTextBox.Text != "" && FilterTextBox.Text != "Filter Results")
+                filter(FilterTextBox.Text);
+            else
+            {
+                foreach (Video video in videos)           
+                    displayedVideos.Add(video);            
+                displayVideos();
+            }
+            
+        }
+
+        public void setSource(MovieSource source)
+        {
+            getMovies = source;
+            videos = getMovies();
+            displayVideos();
         }
     }
 }

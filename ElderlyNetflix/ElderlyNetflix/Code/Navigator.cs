@@ -14,6 +14,7 @@ namespace ElderlyNetflix.Code
     	private static Main window;
         private static Stack<UserControl> screenStack;
         private static UserControl currentScreen; 
+        
 
         /// <summary>
         /// Initialize the Navigator class with a pointer to the main window
@@ -72,6 +73,37 @@ namespace ElderlyNetflix.Code
         }
 
         /// <summary>
+        /// Navigate to a new screen that implements INavigable.
+        /// The new screen is initialized with the given state.
+        /// The previous screen is saved on the screen stack
+        /// </summary>
+        /// <param name="screen"></param>
+        /// <param name="state"></param>
+        public static void navigate(UserControl screen, MovieSource source, params object[] state)
+        {
+            //Check if the window has been set
+            checkWindowSet();
+
+            //Check if the screen is actually navigable
+            INavigable navScreen = screen as INavigable;
+            if (navScreen == null)
+                throw new Exception("UserControl is not INavigable");
+
+            //Save the previous screen
+            if (currentScreenSet)
+                screenStack.Push(currentScreen);
+
+            //Set the new screen
+            setCurrentScreen(screen);
+
+            //Set the screens state
+            navScreen.useState(state);
+            navScreen.setSource(source);
+            navScreen.resume();
+        }
+
+
+        /// <summary>
         /// Navigate to a new screen and replace the current screen without 
         /// saving it to the screen stack.
         /// </summary>
@@ -114,6 +146,7 @@ namespace ElderlyNetflix.Code
             {
                 currentScreen = screenStack.Pop();
                 window.Content = currentScreen;
+                ((INavigable) currentScreen).resume();
             }
         }
 

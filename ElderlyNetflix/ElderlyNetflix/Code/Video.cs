@@ -7,7 +7,7 @@ using System.Windows.Media.Imaging;
 
 namespace ElderlyNetflix.Code
 {
-    class Video
+    public class Video
     {
         /*
          * Video Schema:

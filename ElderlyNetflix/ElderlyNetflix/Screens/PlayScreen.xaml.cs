@@ -19,7 +19,7 @@ namespace ElderlyNetflix.Screens
     /// <summary>
     /// Interaction logic for PlayScreen.xaml
     /// </summary>
-    public partial class PlayScreen : UserControl
+    public partial class PlayScreen : UserControl, INavigable
     {
         public PlayScreen()
         {
@@ -55,6 +55,21 @@ namespace ElderlyNetflix.Screens
         private void scrubberBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             playbackText.Text = ((int)((scrubberBar.Value / 10.0) * 100)).ToString() + "%";
+        }
+
+        public void useState(params object[] state)
+        {
+            
+        }
+
+        public void resume()
+        {
+            
+        }
+
+        public void setSource(MovieSource source)
+        {
+            
         }
     }
 }

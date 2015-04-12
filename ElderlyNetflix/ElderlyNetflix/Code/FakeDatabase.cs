@@ -285,10 +285,7 @@ namespace ElderlyNetflix.Code
             return searchedVideos;
         }
 
-        /*
-         * Returns a complete list of all videos available in the database.
-         */
-        public static List<Video> getVideos()
+        public static List<Video> getVideos()   
         {
             return videos;
         }

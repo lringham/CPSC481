@@ -19,7 +19,7 @@ namespace ElderlyNetflix.Screens
     /// <summary>
     /// Interaction logic for SearchScreen.xaml
     /// </summary>
-    public partial class SearchScreen : UserControl
+    public partial class SearchScreen : UserControl, INavigable
     {
         Dictionary<TextBlock, Video> suggestions = new Dictionary<TextBlock, Video>();
 
@@ -134,6 +134,18 @@ namespace ElderlyNetflix.Screens
         private void mouseLeave(object sender, RoutedEventArgs e)
         {
             ((TextBlock)sender).Background = Brushes.White;
+        }
+
+        public void useState(params object[] state)
+        {
+        }
+
+        public void resume()
+        {
+        }
+
+        public void setSource(MovieSource source)
+        {
         }
     }
 }

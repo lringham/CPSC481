@@ -90,5 +90,15 @@ namespace ElderlyNetflix.Screens
             FakeDatabase.update();
             // Notify that it has been added to favorites.
         }
+
+        public void resume()
+        {
+            //Nothing to do
+        }
+
+        public void setSource(MovieSource source)
+        {
+            //Doesn't have a source. 
+        }
     }
 }
