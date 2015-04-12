@@ -31,7 +31,7 @@
         </Grid>
         <Slider x:Name="scrubberBar" HorizontalAlignment="Left" Margin="49,0,0,0" VerticalAlignment="Top" Height="39" Width="1172" ValueChanged="scrubberBar_ValueChanged" Grid.Row="1"/>
         <CheckBox x:Name="subtitleCheckbox" Content="  Subtitles" HorizontalAlignment="Left" Margin="1042,31,0,0" VerticalAlignment="Top" Grid.Row="1" Background="White" Foreground="White" FontSize="35" Width="179" VerticalContentAlignment="Center" Padding="-1,-1,-5,0" MinHeight="2" Checked="subtitleCheckbox_Checked" Unchecked="subtitleCheckbox_Unchecked"/>
-        <Button x:Name="playButton" Content="►" HorizontalAlignment="Left" Margin="613,18,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" FontSize="48" FontFamily="Aharoni" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Height="70"/>
+        <Button x:Name="playButton" Content="►" HorizontalAlignment="Left" Margin="613,18,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" FontSize="48" FontFamily="Aharoni" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Height="70" Click="playButton_Click"/>
         <TextBlock x:Name="playbackText" HorizontalAlignment="Left" Margin="1226,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="0%" VerticalAlignment="Top" Foreground="White" FontSize="16"/>
     </Grid>
 </UserControl>

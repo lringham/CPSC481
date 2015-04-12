@@ -21,8 +21,9 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class PlayScreen : UserControl, INavigable
     {
-
         private static Notification n;
+
+        private bool isPlaying;
 
         public PlayScreen()
         {
@@ -43,6 +44,14 @@ namespace ElderlyNetflix.Screens
             img.Width = 75;
             img.Source = new BitmapImage(new Uri("/Assets/Images/profile.png", UriKind.Relative));
             profileButton.Content = img;
+
+            img = new Image();
+            img.Height = 64;
+            img.Width = 64;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/pause.png", UriKind.Relative));
+            playButton.Content = img;
+
+            isPlaying = true;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -92,6 +101,28 @@ namespace ElderlyNetflix.Screens
             n = new Notification("Signed Out");
             n.Show();
             Navigator.navigate(new LoginScreen());
+        }
+
+        private void playButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (isPlaying)
+            {
+                Image i = new Image();
+                i.Height = 64;
+                i.Width = 64;
+                i.Source = new BitmapImage(new Uri("/Assets/Images/play.png", UriKind.Relative));
+                playButton.Content = i;
+                isPlaying = false;
+            }
+            else
+            {
+                Image i = new Image();
+                i.Height = 64;
+                i.Width = 64;
+                i.Source = new BitmapImage(new Uri("/Assets/Images/pause.png", UriKind.Relative));
+                playButton.Content = i;
+                isPlaying = true;
+            }
         }
     }
 }
