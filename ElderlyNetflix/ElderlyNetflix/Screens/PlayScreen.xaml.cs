@@ -21,6 +21,9 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class PlayScreen : UserControl, INavigable
     {
+
+        private static Notification n;
+
         public PlayScreen()
         {
             InitializeComponent();
@@ -70,6 +73,25 @@ namespace ElderlyNetflix.Screens
         public void setSource(MovieSource source)
         {
             
+        }
+
+        private void subtitleCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            n = new Notification("Subtitles enabled.");
+            n.Show();
+        }
+
+        private void subtitleCheckbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            n = new Notification("Subtitles disabled.");
+            n.Show();
+        }
+
+        private void profileButton_Click(object sender, RoutedEventArgs e)
+        {
+            n = new Notification("Signed Out");
+            n.Show();
+            Navigator.navigate(new LoginScreen());
         }
     }
 }

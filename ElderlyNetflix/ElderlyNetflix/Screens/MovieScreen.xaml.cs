@@ -21,7 +21,11 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class MovieScreen : UserControl, INavigable
     {
+        
         Video video;
+
+        private static Notification n;
+
         public MovieScreen()
         {
             InitializeComponent();
@@ -91,7 +95,17 @@ namespace ElderlyNetflix.Screens
         {
             video.toggleFavorite();
             FakeDatabase.update();
-            // Notify that it has been added to favorites.
+
+            if (video.getFavoriteStatus())
+            {
+                n = new Notification(video.name+" added to your favorites.");
+                n.Show();
+            }
+            else
+            {
+                n = new Notification(video.name+" removed from your favorites.");
+                n.Show();
+            }
         }
 
         public void resume()
@@ -102,6 +116,13 @@ namespace ElderlyNetflix.Screens
         public void setSource(MovieSource source)
         {
             //Doesn't have a source. 
+        }
+
+        private void profileButton_Click(object sender, RoutedEventArgs e)
+        {
+            n = new Notification("Signed Out");
+            n.Show();
+            Navigator.navigate(new LoginScreen());
         }
     }
 }
