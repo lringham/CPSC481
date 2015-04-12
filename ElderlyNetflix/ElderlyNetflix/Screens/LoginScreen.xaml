@@ -21,13 +21,13 @@
                 <ColumnDefinition Width="639*"/>
                 <ColumnDefinition Width="641*"/>
             </Grid.ColumnDefinitions>
-            <TextBox x:Name="User" HorizontalAlignment="Left" Height="40" Margin="601,221,0,0" VerticalAlignment="Top" Width="240" VerticalContentAlignment="Center" FontSize="18" Grid.ColumnSpan="2" FontStretch="Expanded" FontWeight="SemiBold" MaxLines="1" Padding="8,0,0,0" VerticalScrollBarVisibility="Disabled" MaxLength="25" TextOptions.TextHintingMode="Animated" />
-            <Button x:Name="Login" Content="Sign In" HorizontalAlignment="Center" Margin="501,433,501,64" Width="278" Background="White" Click="Login_Click" FontSize="32" Grid.ColumnSpan="2" FontWeight="Bold"/>
-            <CheckBox Content="Remember User Name" HorizontalAlignment="Left" Height="43" Margin="23,344,0,0" VerticalAlignment="Top" Width="189" RenderTransformOrigin="0.486,0.507" FontSize="16" VerticalContentAlignment="Center" Foreground="Black" Checked="CheckBox_Checked" Grid.Column="1" IsChecked="True"/>
-            <TextBlock HorizontalAlignment="Left" Height="40" Margin="424,218,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="160" FontSize="32" Foreground="Black" IsHitTestVisible="False" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Left" Height="40" Margin="424,288,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="160" FontSize="32" Foreground="Black" IsHitTestVisible="False" FontWeight="Bold"/>
+            <TextBox x:Name="User" HorizontalAlignment="Left" Height="40" Margin="572,221,0,0" VerticalAlignment="Top" Width="268" VerticalContentAlignment="Center" FontSize="18" Grid.ColumnSpan="2" FontStretch="Expanded" FontWeight="SemiBold" MaxLines="1" Padding="8,0,0,0" VerticalScrollBarVisibility="Disabled" MaxLength="25" TextOptions.TextHintingMode="Animated" />
+            <Button x:Name="Login" Content="Sign In" HorizontalAlignment="Center" Margin="501,433,501,64" Background="{x:Null}" Click="Login_Click" FontSize="32" Grid.ColumnSpan="2" FontWeight="Bold" VerticalAlignment="Center"/>
+            <CheckBox Content="Remember User Name" HorizontalAlignment="Left" Height="43" Margin="10,344,0,0" VerticalAlignment="Top" Width="191" RenderTransformOrigin="0.486,0.507" FontSize="16" VerticalContentAlignment="Center" Foreground="Black" Checked="CheckBox_Checked" Grid.Column="1" IsChecked="True"/>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="440,221,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="132" FontSize="24" Foreground="Black" IsHitTestVisible="False" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Height="40" Margin="440,288,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="132" FontSize="24" Foreground="Black" IsHitTestVisible="False" FontWeight="Bold"/>
             <Image HorizontalAlignment="Center" Height="200" Margin="440,0" VerticalAlignment="Top" Source="/ElderlyNetflix;component/Assets/Images/logo.png" Width="400" Grid.ColumnSpan="2"/>
-            <PasswordBox x:Name="Pass" HorizontalAlignment="Left" Margin="601,288,0,0" VerticalAlignment="Top" Height="40" Width="240" Grid.ColumnSpan="2" VerticalContentAlignment="Center" FontSize="18" FontStretch="Expanded" FontWeight="SemiBold" Padding="8,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" MaxLength="50"/>
+            <PasswordBox x:Name="Pass" HorizontalAlignment="Left" Margin="572,288,0,0" VerticalAlignment="Top" Height="40" Width="268" Grid.ColumnSpan="2" VerticalContentAlignment="Center" FontSize="18" FontStretch="Expanded" FontWeight="SemiBold" Padding="8,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" MaxLength="50"/>
         </Grid>
     </Grid>
 </UserControl>

@@ -29,6 +29,10 @@ namespace ElderlyNetflix.Screens
         public LoginScreen()
         {
             InitializeComponent();
+
+            Image img = new Image();
+            img.Source = new BitmapImage(new Uri("/Assets/Images/signin.png", UriKind.Relative));
+            Login.Content = img;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
