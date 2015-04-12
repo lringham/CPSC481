@@ -26,7 +26,12 @@ namespace ElderlyNetflix
             InitializeComponent();
             FakeDatabase.initalize();
             Navigator.setWindow(this);
-            Navigator.navigate(new LoginScreen()); //Navigate to the starting screen
+            Navigator.navigate(new LoginScreen()); //Navigate to the starting screen      
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

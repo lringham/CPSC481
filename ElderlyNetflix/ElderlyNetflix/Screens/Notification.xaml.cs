@@ -20,32 +20,13 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class Notification : Window
     {
-        public bool canView = true;
-
-        public Notification()
+        public Notification(String s)
         {
             InitializeComponent();
-
-            StartCloseTimer();
+            
+            Title.Text = s;
+            Left = Application.Current.MainWindow.Left + 15;
+            Top = (Application.Current.MainWindow.Top + Application.Current.MainWindow.Height) - 70;
         }
-
-        
-        private void StartCloseTimer()
-        {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(3d);
-            timer.Tick += TimerTick;
-            timer.Start();
-        }
-
-        private void TimerTick(object sender, EventArgs e)
-        {
-            DispatcherTimer timer = (DispatcherTimer)sender;
-            timer.Stop();
-            timer.Tick -= TimerTick;
-            Close();
-            canView = false;
-        }
-        
     }
 }

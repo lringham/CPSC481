@@ -23,13 +23,12 @@ namespace ElderlyNetflix.Screens
     {
         private static MovieListScreen movieList;
         private static SearchScreen search;
-        private static Notification signOut;
+
+        private static Notification n;
 
         public MainScreen()
         {
             InitializeComponent();
-
-            signOut = new Notification();
 
             Image img = new Image();
             img.Height = 75;
@@ -62,6 +61,9 @@ namespace ElderlyNetflix.Screens
             Favorite.Content = img;
         }
 
+        /*
+         * Application Navigation Buttons
+         */
         private void Recent_Click(object sender, RoutedEventArgs e)
         {
             movieList = new MovieListScreen();
@@ -88,22 +90,20 @@ namespace ElderlyNetflix.Screens
             Navigator.navigate(search);
         }
 
-        private void Profile_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
-
-        }
-
+        /*
+         * 
+         */
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             Navigator.navigateAndClearStack(new ProfileScreen());
         }
 
-        private void profileButton_MouseEnter(object sender, MouseEventArgs e)
+        private void profileButton_Click(object sender, RoutedEventArgs e)
         {
-            if (signOut.canView)
-                signOut.Show();             
+            n = new Notification("Signed Out");
+            n.Show();
+            Navigator.navigate(new LoginScreen());
         }
-
 
         void INavigable.useState(params object[] state)
         {
@@ -119,5 +119,6 @@ namespace ElderlyNetflix.Screens
         {
    
         }
+
     }
 }
