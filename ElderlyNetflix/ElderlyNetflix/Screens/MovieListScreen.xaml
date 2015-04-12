@@ -28,7 +28,7 @@
             <Button x:Name="backButton" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="90" BorderThickness="0" Click="Back_Click" Background="{x:Null}"/>
             <TextBox x:Name="FilterTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="36" Margin="855,27,0,0" TextWrapping="Wrap" Text="Filter Results" VerticalAlignment="Top" Width="185" Grid.ColumnSpan="2" VerticalContentAlignment="Center" LostFocus="FilterTextBox_LostFocus" GotFocus="FilterTextBox_GotFocus" KeyUp="FilterTextBox_KeyUp" FontSize="18" BorderThickness="1" Padding="8,0,0,0"/>
         </Grid>
-        <TextBlock x:Name="header" Text= "Header" FontSize="24" Padding="200,10,0,15"/>
+        <TextBlock x:Name="header" Text= "Header" FontSize="24" Padding="200,10,0,15" FontWeight="Bold"/>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" CanContentScroll="True">
             <StackPanel x:Name="ResultsStackPanel" Margin="0,0,0,100" VerticalAlignment="Top" Height="611"/>
         </ScrollViewer>
