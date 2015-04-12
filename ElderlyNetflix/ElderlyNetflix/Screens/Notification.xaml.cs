@@ -28,5 +28,10 @@ namespace ElderlyNetflix.Screens
             Left = Application.Current.MainWindow.Left + 15;
             Top = (Application.Current.MainWindow.Top + Application.Current.MainWindow.Height) - 70;
         }
+
+        private void Storyboard_Completed(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
