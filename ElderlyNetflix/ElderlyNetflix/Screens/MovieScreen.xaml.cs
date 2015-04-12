@@ -36,8 +36,8 @@ namespace ElderlyNetflix.Screens
 
             img = new Image();
             img.Source = new BitmapImage(new Uri("/Assets/Images/back.png", UriKind.Relative));
-            img.Height = 50;
-            img.Width = 50;
+            img.Height = 100;
+            img.Width = 100;
             backButton.Content = img;
 
             img = new Image();
