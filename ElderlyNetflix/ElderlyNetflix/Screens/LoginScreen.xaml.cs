@@ -21,6 +21,11 @@ namespace ElderlyNetflix.Screens
     /// </summary>
     public partial class LoginScreen : UserControl, INavigable
     {
+        private String username;
+        private String password;
+
+        private static Notification n;
+
         public LoginScreen()
         {
             InitializeComponent();
@@ -28,12 +33,24 @@ namespace ElderlyNetflix.Screens
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.navigate(new MainScreen());
+            //Navigator.navigate(new MainScreen());
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            Navigator.navigate(new ProfileScreen());
+            if (User.Text == "test@test.com" && Pass.Password == "password")
+            {
+                n = new Notification("Login successful.");
+                n.Show();
+
+                Navigator.navigate(new MainScreen());
+            }
+            else
+            {
+                n = new Notification("Incorrect username or password.");
+                n.Show();
+            }
+            
         }
 
         public void useState(params object[] state)
@@ -47,6 +64,11 @@ namespace ElderlyNetflix.Screens
 
         public void setSource(MovieSource source)
         {
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            User.Text = "test@test.com";
         }
     } 
 }
