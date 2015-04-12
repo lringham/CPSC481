@@ -38,9 +38,9 @@ namespace ElderlyNetflix.Screens
             backButton.Content = img;
 
             img = new Image();
-            img.Height = 75;
-            img.Width = 75;
-            img.Source = new BitmapImage(new Uri("/Assets/Images/profile.png", UriKind.Relative));
+            img.Height = 100;
+            img.Width = 100;
+            img.Source = new BitmapImage(new Uri("/Assets/Images/logout.png", UriKind.Relative));
             profileButton.Content = img;
 
             suggestionsBox.Height = 0;
