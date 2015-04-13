@@ -110,7 +110,7 @@ namespace ElderlyNetflix.Screens
         private void SearchBar_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Return)
-                Navigator.navigate(new MovieListScreen(), "Search Results for \"" + SearchBar.Text + "\"", FakeDatabase.getSuggestedVideos(SearchBar.Text));
+                Navigator.navigate(new MovieListScreen(), "SEARCH RESULTS FOR \"" + SearchBar.Text.ToUpper() + "\"", FakeDatabase.getSuggestedVideos(SearchBar.Text));
         }
 
         private void SearchBar_KeyUp(object sender, KeyEventArgs e)

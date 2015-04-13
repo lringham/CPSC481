@@ -33,6 +33,8 @@ namespace ElderlyNetflix.Screens
             Image img = new Image();
             img.Source = new BitmapImage(new Uri("/Assets/Images/signin.png", UriKind.Relative));
             Login.Content = img;
+
+            User.Text = username;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
@@ -71,7 +73,8 @@ namespace ElderlyNetflix.Screens
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            User.Text = username;
+            n = new Notification("Not currently implemented.");
+            n.Show();
         }
     } 
 }
