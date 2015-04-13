@@ -26,7 +26,7 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="profileButton" Grid.Column="3" Grid.Row="0" Width="160" BorderThickness="0" HorizontalAlignment="Right" Background="{x:Null}" ToolTip="Sign Out" />
             <Button x:Name="homeButton" Grid.Column="1" Height="70" Margin="0" Width="177" Click="Home_Click" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Center" Background="{x:Null}" ToolTip="Return to Home Screen"/>
-            <Button x:Name="backButton" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="90" BorderThickness="0" Click="Back_Click" Background="{x:Null}"/>
+            <Button x:Name="backButton" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="90" BorderThickness="0" Click="Back_Click" Background="{x:Null}" ToolTip="Return to previous screen"/>
         </Grid>
         <Grid Height = "720">
             <Grid.ColumnDefinitions>
